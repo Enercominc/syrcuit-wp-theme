@@ -1,0 +1,319 @@
+## 1.3.5
+
+Changes:
+* Updated bundled Bootstrap to v5.1.3
+* Updated bundled Boostrap Icons to v1.7.0
+* Updated bundled Jarallax to v1.12.8
+* Jarallax Video is now bundled with the theme, but not included in the gulpfile's scripts task (must be manually added if needed)
+* ( lib/class-method-layout.php ) Added additional format tags: [b]...[/b], which is shorthand for [strong]...[/strong]
+
+---
+
+## 1.3.4
+
+Changes:
+* ( lib/class-method-layout.php ) Implemented a new filter, 'method_format_tags', which can be used to add format tags to the array of format tags found in the format_tags() method.
+* ( lib/class-method-layout.php ) Added a new format tag, `[bull]`, which is converted to `<span class="method-bull">&bull;</span>` by the format_tags() method.
+* ( lib/class-method-layout.php ) Added an optional $fallback argument to the get_meta(), get_loaded_meta(), and get_option() methods. If the requested key does not exist or is empty, the value of $fallback will be returned, if provided. Fallback values will not be processed in any way and support full html.
+* ( lib/admin-customization.php ) Added a new action, 'method_after_tags_dialog_html', which can be used to inject html into the bottom of the format tags dialog.
+
+---
+
+## 1.3.3
+
+Changes:
+* ( lib/class-method-layout.php ) Fixed version number in file.
+* ( lib/class-method-layout.php ) Added a $fallback argument to the get_bg_inline_style() method. If provided, an inline style attribute will be generated for the fallback image path if building the attribute using an attachment id fails.
+* ( lib/class-method-layout.php ) Added format tags for underlined text (\[u\]...\[/u\]). CSS will have to be provided for this tag based on individual use cases. Text wrapped in this format tag will be wrapped in a span with the class "method-underlined"
+
+---
+
+## 1.3.2
+
+Changes:
+* ( lib/class-method-layout.php ) Fixed an issue in init_page() that could cause the post type to not be correctly set.
+* ( README.md ) Updated copy and linked to the new Method wiki.
+* Migrated to new theme branding.
+
+---
+
+## 1.3.0
+
+This release makes it possible to build layouts directly inside template files, while still being able to use the theme layout class for the header, footer, and any needed reusable components. It also includes new arguments for Method_Layout's inject_bs_modal() method and an upgraded Bootstrap release.
+
+Changes:
+* ( lib/class-method-layout.php ) Added a new method, init_page(), for setting up the layout class from a template file. This method is intended to be used in the place of the build_layout() method, which requires all layout code to be contained within the theme's layout class. By default, the build_component(), get_header_markup(), and get_footer_markup() methods will only return markup from $this->html. Any added scripts or modals will be returned with get_footer_markup() when it is called. If you do no intend to call get_footer_markup(), pass the $standalone argument for init_page() as true. When set to true, build_component(), get_header_markup(), and get_footer_markup() will return merged output containing the contents of $this->html, $this->scripts, and $this->modals, resetting the contents of each every time one of the methods is called.
+* ( lib/class-method-layout.php ) Added a new method, build_component(), for building a single component contained within the theme layout class build_components() method.
+* ( lib/class-method-layout.php ) Added a new method, get_header_markup(), for returning the contents of the build_header() method.
+* ( lib/class-method-layout.php ) Added a new method, get_footer_markup(), for returning the contents of the build_footer() method.
+* ( lib/class-method-layout.php ) Added new methods (get_merged_markup(), reset_html(), and reset_markup()) for merging and resetting the contents of $this->html, $this->modals, and $this->scripts as needed.
+* ( lib/class-method-layout.php ) Added new arguments to the inject_bs_modal() method ('prepend_header', 'append_header', 'prepend_body', 'append_body') for appending and prepending markup to the modal-header and modal-body divs
+* ( lib/class-method-layout.php ) Added a new argument, 'return', to the inject_bs_modal() method to control whether modal markup is returned or added to the class modal attribute. By default, this argument is false.
+* ( lib/class-method-layout.php ) The following methods are now public and can be used outside of the theme layout class: get_meta(), get_serialized_meta(), get_headline(), get_content(), load_meta(), unload_meta(), get_loaded_meta(), get_serialized_loaded_meta(), get_loaded_headline(), get_loaded_content(), get_option(), get_headline_from_option(), get_content_from_option(), array_to_ul(), array_to_p(), format_tags(), format_headline(), check_key(), filter_content(), str_replace_assoc(), inject_modal(), inject_bs_modal(), get_bg_inline_style(), odd_or_even(), get_bs_icon_svg(), get_svg(), endsWith(), build_social_icons(), build_observer()
+* ( inc/bootstrap ) Bundled Bootstrap assets upgraded to Bootstrap v5.0.1
+
+---
+
+## 1.2.5
+
+Changes:
+* ( lib/class-method-layout.php ) Added a new 'hide_header' argument to the inject_bs_modal() method, which, when true, will hide the modal header and move the close button into the modal body.
+* ( lib/class-method-layout.php ) Added a new method, get_svg(), for inlining svgs set through custom editor options (by attachment ID). The method falls back to wp_get_attachment_image() if the attachment ID is not for an svg.
+* ( lib/class-method-layout.php ) Added a new method, endsWith(), to mimic the functionality of php8's str_ends_with() function.
+
+---
+
+## 1.2.4
+
+This release contains optimizations for gulpfile.js, includes several upgrades for bundled libraries, and switches to a new Bootstrap navwalker. 
+
+Changes:
+* Updated bundled Bootstrap to v5.0.0 (from v5.0.0-beta3)
+* Updated bundled Boostrap Icons to v1.4.1 (from v1.4.0)
+* Updated Jarallax to v1.2.5 (from v1.2.4)
+* The theme now uses AlexWebLab's Bootstrap 5 navwalker (https://github.com/AlexWebLab/bootstrap-5-wordpress-navbar-walker)
+* ( package.json ) Removed uneeded dependencies.
+* ( package.json ) Updated minimum versions for several dependencies: browser-sync 2.26.3 => 2.26.14, gulp 4.0.0 => 4.0.2, gulp-autoprefixer 4.0.0 => 7.0.1, gulp-dart-sass 0.9.1 => 1.0.2, gulp-notify 3.0.0 => 4.0.0, gulp-rename 1.2.2 => 2.0.0, gulp-uglify 3.0.0 => 3.0.2
+* ( gulpfile.js ) Removed uneeded dependencies.
+* ( gulpfile.js ) The serve task no longer reloads on css/scss changes, as they are streamed to the browser via the compile-styles task.
+
+---
+
+## 1.2.3
+
+This release adds missing dependencies to the package.json file.
+
+---
+
+## 1.2.2
+
+Added a new method to the Method_Layout class, build_observer(), for building intersection observers that trigger specified actions when a tracked element is fully in view.
+
+---
+
+## 1.2.1
+
+This release upgrades Bootstrap to v5.0.0-beta3 and includes changes to the theme's .gitignore file. The theme's stylesheet and compiled js file are no longer tracked, and will need to be generated using the following command: `gulp scripts styles`.
+
+---
+
+## 1.2.0
+
+This release splits the functions.php file out into several categorized files to support a more streamlined development workflow. These files are located under the /lib folder. For an overview of how files are structured as of this release, visit the [project wiki](https://github.com/pixelwatt/method/wiki).
+
+Other Changes:
+* ( gulpfile.js ) The styles tasks was renamed to compile-styles, and the assets tasks was renamed to process-styles. The styles task now triggers a series consisting of the 2 tasks.
+* ( gulpfile.js ) The scope of files processed during the process-styles task has been narrowed to only include the theme.css and theme.min.css files, and the tasks now loads the theme's images folder alongside Bootstrap Icons.
+* ( lib/class-method-layout.php ) The get_bs_icon_svg() method now adds `focusable="false"` to returned SVGs to prevent Internet Explorer and legacy Edge from automatically focusing on them.
+* ( lib/class-method-layout.php ) A new argument, $hidden, was added to the get_bs_icon_svg() method. If set to true, an aria-hidden attribute (set to true) will be added to the returned SVG element, hiding it from screen readers. The argument is false by default.
+* ( lib/class-method-layout.php ) The get_bs_icon_svg() method was retrofitted to easily support adding multiple attributes to the SVG tag.
+* ( lib/class-method-layout.php ) A fix was added to the get_bs_icon_svg() method to prevent PHP warnings from triggering due to what DOMDocument considers invalid HTML.
+* ( lib/class-method-layout.php ) The build_social_icons() method was moved from the theme layout class into Method layout, and includes several fixes. These include: embedded Bootstrap icons are now used for social icons, the method now ensures that social options have been configured before generating output, and the hidden label for screen users now uses the correct Bootstrap 5 class names for visually-hidden content.
+* ( lib/class-method-layout.php ) A custom class name for the ul element and the size for embedded icon SVGs can now be passed to the build_social_icons() method.
+* ( lib/cmb2-options-loader.php ) A $prefix variable is now set on each pass through the loop.
+* ( lib/helper-functions.php ) The returned classes for 'full_width_outer_col' now includes the 'full-width-outer-col' class.
+* ( lib/helper-functions.php ) For both the method_get_post_array() and method_get_term_array() functions, the $none argument now defaults to being an empty string, with the function ignoring it if empty. If a non-empty string is provided, a "none" item will be added to the returned array as the first array value, with an empty key.
+* ( lib/helper-functions.php ) The method_get_content() function was removed. Instead, use: `method_filter_content( get_the_content( null, false, $post->ID ) )` (if outside the layout class) or `$this->filter_content( get_the_content( null, false, $this->id ) )` (if inside the layout class)
+* ( lib/theme-customization.php ) In the repeatable options group for social media accounts, the service is now picked via a select element and not radio buttons. Additionally, an option for _None_ was added, and is now the default.
+* ( lib/theme-setup.php ) WordPress' jQuery library is no longer overridden. The option to override jQuery is still available in method-generator if needed.
+
+---
+
+## 1.1.6
+
+This release adds Bootstrap Icons (v1.4.0) to the theme and provides ways to easily included embeded/inline svgs in frontend markup and CSS. This release also includes minor organization of the /inc folder.
+
+Changes:
+* ( class-method-layout.php ) Added a new method, get_bs_icon_svg(), for retrieving an embeded svg element for a passed Bootstrap icon (if the icon exists). The method supports custom sizing, custom classes, and the inclusion of an aria-label attribute on the svg element, if needed.
+* ( inc/bootstrap-icons/ ) Added Bootstrap Icons v1.4.0.
+* ( package.json / gulpfile.js ) Added a new _assets_ gulp task and dependencies. This task uses gulp-postcss and postcss-assets to check newly-compiled css files for svg paths pointed to specific directiories, and converts them into inline SVGs if wrapped in inline(…). the _serve_ and _watch_ tasks now run this task after completing the _styles_ task.
+* ( inc/ ) Organized files in the root of inc/ into folders and removed a legacy bootstrap.bundle file. Paths have been updated in functions.php and gulpfile.js
+
+---
+
+## 1.1.5
+
+Fixes:
+* ( class-method-layout.php ) Added the missing $class argument to the array_to_ul() method.
+* ( class-method-layout.php ) Fixed a bug in the inject_modal() and inject_bs_modal() methods in which an extra button closing tag was being added into the modal header.
+* ( class-method-layout.php ) Reversed the order of the $even_text and $odd_text arguments for the odd_or_even() method.
+
+---
+
+## 1.1.4
+
+This release includes bug fixes and additions for the layout class.
+
+Fixes:
+* ( class-method-layout.php ) Revised the inject_modal() method to use Bootstrap 5 markup for the close button by default. A new argument can be passed as false to use Bootstrap 4 markup if needed.
+* ( class-method-layout.php ) Fixed a bug with the inject_modal() method, in which custom CSS classes passed to the method were ignored.
+
+Additions:
+* ( class-method-layout.php ) Added a new method, format_headline(), which escapes html in a string, then runs the string through the format_tags() method.
+* ( class-method-layout.php ) Added a new method to replace the existing inject_modal() method. This new method, inject_bs_modal(), accepts arguments as an array and uses WordPress' standardized method to merge passed args with an array of defaults. This new method also adds support for using the small and extra-large modal sizes, and includes an argument for hiding the modal title. The inject_modal() modal will continue to be included for backwards compatability.
+* ( class-method-layout.php ) Added a new method, get_bg_inline_style(), for conditionally building an inline style tag for a background image, based on whether the passed attachment ID evaluates as true.
+* ( class-method-layout.php ) Added a new method, odd_or_even(), which returns a distinct value based on whether a passed number is odd or even. 'odd' or 'even' is returned by default, but custom values can be passed to the method if needed.
+
+---
+
+## 1.1.3
+
+This release includes several new methods and enhancements for the Method_Layout class.
+
+Changes:
+* ( class-method-layout.php ) Added a new argument to the array_to_p() method for keeping a provided seperator visible.
+* ( class-method-layout.php ) Added a new method, get_headline_from_option(), for building a headline from a retrieved theme option.
+* ( class-method-layout.php ) Added a new method, get_content_from_option(), for building filtered content from a retrieved theme option.
+* ( class-method-layout.php ) Added a new method, get_loaded_content(), for building filtered content from a loaded meta key.
+* ( class-method-layout.php ) Added a new method, get_content(), for building filtered content from a meta key belonging to the current post ID.
+* ( class-method-layout.php ) Reformated the file to be more readable and structured.
+
+---
+
+## 1.1.2
+
+This release implements bug fixes and enhancements to the Method_Layout class.
+
+Changes:
+* ( class-method-layout.php ) Reformatted the file to better fall in line with the WordPress Core coding standard.
+* ( class-method-layout.php ) Fixed a bug with the output of the inject_modal() method. The correct CSS ID is now applied to the modal headline.
+* ( class-method-layout.php ) Output for the array_to_ul() and array_to_p() methods is now passed through the format_tags() method.
+* ( class-method-layout.php ) A class can now be added to the ul tag generated by the array_to_ul() method.
+* ( class-method-layout.php ) A visually-hidden seperator can now be included before each line break in the output of the array_to_p() method.
+* ( class-method-layout.php ) Classes for the [br] and [mbr] format tags have been modified to be more reliable.
+
+---
+
+## 1.1.1
+
+Changes:
+* Fixed an issue with the core layout class that caused a fatal error (attributes were private and are now protected)
+* Updated Bootstrap to v5.0.0-beta2 and moved variable customization into the theme.scss file. This makes it possible to upgrade Bootstrap without having to worry about any overrides being lost.
+* Bootstrap js and scss files can now be found under inc/bootstrap
+* Renamed the theme layout class.
+
+---
+
+## 1.1.0
+
+This release implements a new abstract layout class, called Method_Layout, which the theme layout class now extends. This makes it possible to upgrade the core layout class as new versions are released, as the utility functions are now seperated from theme-specific code. Going forward, releases will include the option to download only the layout class.
+
+Changes:
+* ( new file: class-method-layout.php ) Added the new parent layout class
+* ( functions.php ) Fixed a reference to an undeclared variable in the check_key() function.
+* ( functions.php ) Rewrote the theme layout class to extend the new Method_Layout class.
+
+---
+
+## 1.0.15
+
+Changes:
+* ( functions.php ) Fixed an issue with the unload_meta method in the layout class (an ID does not need to be passed to the method)
+
+---
+
+## 1.0.14
+
+Changes:
+* Moved bundled JS scripts into the inc/ directory for consistency.
+* Upgraded jarallax to 1.12.4 and removed the depracated jarallax-element.js file.
+* Upgraded Bootstrap to v4.5.3.
+* Recompiled scripts.min.js and theme.min.css.
+
+---
+
+## 1.0.13
+
+Changes:
+* ( functions.php ) Added a new method to the layout class, get_headline(), to provide a uniform method for handeling fields that support format tags. This also allows for cleaner code, as the method handles logic for checking if a meta key is empty, falling back to an optionally provided fallback, and then not rendering anything. While fallback strings are not processed in any way, metakeys are passed through esc_html() and then the format_tags method if not empty. Example usage: $this->get_headline( 'my_meta_key', '<h2>', '</h2>', 'Fallback' )
+* ( functions.php ) Added a new function, method_get_tags_badge(), that returns HTML for a "Tags Supported" badge. This badge can be inserted into CMB2 field descriptions for fields that will be passed through the format_tags() method of the layout class. Clicking the badge will open a dialog listing available tags. If you add additional tags to the format_tags() method, you should update the dialog's text to detail them so that content editors know that they are available and what they do.
+* ( assets/css/admin-styles.css ) Added an admin CSS file, which currently contains styles for the "Tags Supported" badge (.method-tags-opener)
+* ( functions.php ) Added a new function, method_admin_scripts(), that registers admin-styles.css, the jquery ui dialog plugin, and styles for the current version of WordPress-bundled jquery ui for the admin area of the site via admin_enqueue_scripts
+* ( functions.php ) Added a new function, method_admin_footer_function(), that injects js and html for the format tags dialog into the admin footer via admin_footer
+* ( functions.php ) Added support for inserting em tags to strings processed with the format_tags method.
+* ( functions.php ) Added new methods to the layout class for loading a second set of post meta, retrieving loaded meta in a similiar fashion to the get_meta() method, and unloading the meta. This was added for easier handling of meta in archive layout components. ( load_meta(), get_loaded_meta(), get_serialized_loaded_meta(), unload_meta() )
+* ( functions.php ) Added a new method to the layout classes, get_loaded_headline(), for indentical headline processing, but with loaded meta.
+
+---
+
+## 1.0.12
+
+Changes:
+* ( functions.php ) Added a new function, method_str_replace_assoc(), to find/replace strings using values from an associative array.
+* ( functions.php ) Modified markup for the layout class default 'active' component to look like the 404 template.
+* ( functions.php ) Added a new function to the layout class, format_tags(), for replacing format tags with html markup.
+* ( theme.scss ) Changed body.error404 to .error404 so the contained styles could be reused on non-error404 pages.
+
+---
+
+## 1.0.11
+
+Changes:
+* ( assets/images/login-bg.jpg ) Updated the background image for the custom login page.
+* ( assets/images/login-logo.* ) Updated the theme logo for the custom login page and changed it's format to SVG.
+* ( functions.php ) Added an example function (commented out) for registering a new meta box for a custom page template.
+* ( functions.php ) Added functions to remove post editor options added by Ninja Forms and to lower the priority of Yoast SEO's metabox (if these plugins are used)
+* ( functions.php ) Removed granim from the custom login page, and removed it's required extra markup.
+* ( inc/granim/ ) Removed granim
+* ( login.css ) Added styles for the login page background image, updated the path to the custom logo
+* ( login.js ) Removed, as it was only required for granim
+* ( screenshot.png ) Updated the screenshot for the theme.
+
+---
+
+## 1.0.10
+
+Changes:
+* ( functions.php ) Removed "Classic Editor" as a required plugin.
+* ( functions.php ) Changed the handle used for the theme's scripts to "method"
+* ( functions.php ) Fixed a bug with CMB2 helper function names that caused CMB2 to not function.
+* ( inc/fontawesome/ ) Removed FontAwesome assets
+* ( README.md ) Added a banner image to the README
+
+---
+
+## 1.0.9
+
+Changed the theme's name to Method. It sounds cooler.
+
+---
+
+## 1.0.8
+
+This release includes minor tweaks to function names (updated prefixes) and other minor fixes.
+
+---
+
+## 1.0.7
+
+This release adds expanded theme support options, removes FontAwesome files, and includes other misc changes. This release was built with the initial version of Sunrise Builder.
+
+---
+
+## 1.0.6
+
+This release implements fixes for code format issues found in code lint (PHPCS configured to check against WordPress coding standards), changes theme prefixes from "spitfire" to "sunrise", and updated class references in template files to use the new layout class name (sunriseLayout)
+
+---
+
+## 1.0.5
+
+Added a code_lint CI script.
+
+---
+
+## 1.0.4
+
+Added login screen customizations, upgraded Bootstrap to 4.5.2, added basic page/front page/single templates, and added a new method, get_serialized_mets(), to the layout class.
+
+---
+
+## 1.0.3
+
+This release add's Boostrap 4.5.0, increases the gulp version requirements to 4.0.0+, fixes various code issues, and moves the theme away from the customizer.
+
+---
+
+## 1.0.1 - 03-24-2019
+
+This release upgrades Bootstrap to v4.3.1
