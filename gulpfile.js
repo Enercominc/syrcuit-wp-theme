@@ -47,11 +47,11 @@ gulp.task('serve', function() {
         proxy: "method.test:8080"
     });
     // Watch .scss files
-    gulp.watch(['./**/*.scss', '!./node_modules/', '!./.git/'], gulp.series('compile-styles', 'process-styles'));
+    gulp.watch(['./**/*.scss', '!./node_modules/', '!./.git/'], {usePolling: true}, gulp.series('compile-styles', 'process-styles'));
     gulp.watch(['./**/*.*', '!./node_modules/', '!./.git/', '!./**/*.scss', '!./theme.css', '!./theme.min.css']).on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {
       // Watch .scss files
-      gulp.watch(['./**/*.scss', '!./node_modules/', '!./.git/'], gulp.series('compile-styles', 'process-styles'));
+      gulp.watch(['./**/*.scss', '!./node_modules/', '!./.git/'], {usePolling: true}, gulp.series('compile-styles', 'process-styles'));
 });

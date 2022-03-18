@@ -5,7 +5,14 @@ THEME STYLES
 // Import Bootstrap. Place any overrides before the import.
 
 $green: #4BFD9F;
-$primary: $green;
+$yellow: #E9C71D;
+$gray: #535353;
+$orange: #D4872B;
+$red: #A8471D;
+$teal: #3A606F;
+$white: #FFFFFF;
+$dark-gray: #313131;
+$primary: $gray;
 
 @import "inc/bootstrap/scss/bootstrap.scss";
 
