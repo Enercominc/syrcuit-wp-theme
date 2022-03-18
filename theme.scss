@@ -2,6 +2,10 @@
 THEME STYLES
 */
 
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Montserrat&display=swap');
+
+// font-family: 'Archivo', sans-serif;
+
 // Import Bootstrap. Place any overrides before the import.
 
 $green: #4BFD9F;
@@ -12,10 +16,72 @@ $red: #A8471D;
 $teal: #3A606F;
 $white: #FFFFFF;
 $dark-gray: #313131;
+$medium-gray: #898989;
+$light-gray: #EFEFEF;
+
 $primary: $gray;
+
+$enable-negative-margins: true;
+
 
 @import "inc/bootstrap/scss/bootstrap.scss";
 
+body {
+	background: $dark-gray;
+
+	> .container {
+		// background: $white;
+		> .row {
+			background: $white;
+		}
+
+		
+
+	}
+}
+
+
+footer {
+		background-color: $light-gray;
+		background-image: url('./assets/images/footer-background.png');
+		background-position: top left;
+		background-repeat: no-repeat;
+		// background-size:
+
+		.syrcuit-footer-addr {
+			text-align: left;
+			font: normal 700 18px/24px Archivo;
+			letter-spacing: 0px;
+			color: $teal;
+			text-transform: uppercase;
+		}
+
+		.syrcuit-footer-contact {
+			h4 {
+				text-align: left;
+				font: normal normal bold 20px/24px Archivo;
+				letter-spacing: 0.6px;
+				color: $teal;
+				text-transform: uppercase;
+			}
+			p {
+				text-align: left;
+				font: normal 500 18px/24px Archivo;
+				letter-spacing: 0px;
+				color: #3A606F;
+			}
+
+		}
+
+		.syrcuit-footer-copyright {
+			text-align: left;
+			font: normal normal normal 18px/22px Montserrat;
+			letter-spacing: 0px;
+			color: $medium-gray;
+		}
+		
+
+}
 
 // Jarallax CSS
 
@@ -107,5 +173,5 @@ $primary: $gray;
 }
 
 .full-width-container {
-	max-width: 1300px;
+	max-width: 1200px;
 }

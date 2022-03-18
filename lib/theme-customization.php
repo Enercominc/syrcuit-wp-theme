@@ -97,6 +97,59 @@ function syrcuit_register_theme_options_metabox() {
 		)
 	);
 
+	
+
+	$cmb_options->add_field(
+		array(
+			'name'     => __( 'Address (Line 1)', 'syrcuit-mu' ),
+			'id'       => 'addr_line1',
+			'type'     => 'text',
+			'desc' => __( '(ex: 1 Apple Park Way)', 'syrcuit-mu' ),
+		)
+	);
+
+	$cmb_options->add_field(
+		array(
+			'name'     => __( 'Address (Line 2)', 'syrcuit-mu' ),
+			'id'       => 'addr_line2',
+			'type'     => 'text',
+			'desc' => __( '(ex: Suite 1234)', 'syrcuit-mu' ),
+		)
+	);
+
+	$cmb_options->add_field(
+		array(
+			'name'     => __( 'Address (Line 3)', 'syrcuit-mu' ),
+			'id'       => 'addr_line3',
+			'type'     => 'text',
+			'desc' => __( '(ex: Cupertino, California)', 'syrcuit-mu' ),
+		)
+	);
+
+	$cmb_options->add_field(
+		array(
+			'name'     => __( 'Phone Number', 'syrcuit-mu' ),
+			'id'       => 'phone_num',
+			'type'     => 'text',
+		)
+	);
+
+	$cmb_options->add_field(
+		array(
+			'name'     => __( 'Fax Number', 'syrcuit-mu' ),
+			'id'       => 'fax_num',
+			'type'     => 'text',
+		)
+	);
+
+	$cmb_options->add_field(
+		array(
+			'name'     => __( 'Contact Form', 'syrcuit' ),
+			'id'       => 'footer_contact',
+			'type'     => 'wysiwyg',
+		)
+	);
+
 	$cmb_options->add_field(
 		array(
 			'name'     => __( 'Copyright', 'syrcuit' ),
