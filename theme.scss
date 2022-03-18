@@ -2,7 +2,7 @@
 THEME STYLES
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Montserrat&display=swap');
 
 // font-family: 'Archivo', sans-serif;
 
@@ -26,6 +26,10 @@ $enable-negative-margins: true;
 
 @import "inc/bootstrap/scss/bootstrap.scss";
 
+p {
+	margin-bottom: 1rem;
+}
+
 body {
 	background: $dark-gray;
 
@@ -35,8 +39,31 @@ body {
 			background: $white;
 		}
 
-		
+	}
+}
 
+body > div.container div#content {
+	h2 {
+		text-align: left;
+		font: normal normal bold 62px/30px Archivo;
+		letter-spacing: 0px;
+		color: $teal;
+		text-transform: uppercase;
+		opacity: 1;
+	}
+
+    h3 {
+    	text-align: left;
+		font: normal normal medium 26px/34px Archivo;
+		letter-spacing: 0px;
+		color: $teal;
+    }
+
+	p, ul, li {
+		text-align: left;
+		font: normal normal medium 26px/34px Archivo;
+		letter-spacing: 0px;
+		color: $teal;
 	}
 }
 
@@ -52,11 +79,28 @@ body > div.container div.syrcuit-service-content {
 		opacity: 1;
 	}
 
-	p {
+	h3 {
 		text-align: left;
-		font: normal normal medium 26px/34px Archivo;
+		font: normal 700 18px/20px Archivo;
 		letter-spacing: 0px;
 		color: $white;
+		text-transform: uppercase;
+	}
+
+	p {
+		text-align: left;
+		font: normal 500 26px/34px Archivo;
+		letter-spacing: 0px;
+		color: $white;
+	}
+
+	li {
+		text-align: left;
+		font: normal 600 18px/20px Archivo;
+		letter-spacing: 0px;
+		color: $white;
+		opacity: 1;
+		margin-bottom: .75rem;
 	}
 
 	a.btn {
@@ -82,6 +126,44 @@ body > div.container div#syrcuit-service-content-2 {
 body > div.container div#syrcuit-service-content-3 {
 	background: $teal;
 }
+
+// Solar 
+
+
+body.page-template-page-template-solar div#benefits {
+	background: $orange;
+
+	.benefit {
+		h3 {
+			text-align: left;
+			font: normal bold 20px/24px Archivo;
+			letter-spacing: 0px;
+			color: $white;
+			border-bottom: 1px solid $white;
+		}
+
+		div {
+			text-align: left;
+			font: normal 500 18px/24px Archivo;
+			letter-spacing: 0px;
+			color: $white;
+		}
+		.img-wrapper {
+			border-radius: 50%;
+			background-color: $white;
+			min-height: 84px;
+			min-width: 84px;
+			text-align: center;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			img {
+			}
+		}
+	}
+}
+
 
 footer {
 		background-color: $light-gray;

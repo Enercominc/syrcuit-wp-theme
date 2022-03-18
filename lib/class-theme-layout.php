@@ -162,10 +162,12 @@ class SyrcuitThemeLayout extends Method_Layout {
 					break;
 				case 'content-box':
 					$this->html .= '
-								<div class="row">
-									<div class="col-12">
-										' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2">', '</h2>' ) . '
-										' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
+								<div class="row" id="content">
+									<div class="p-5">
+										<div class="col-12">
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
+										</div>
 									</div>
 								</div>
 					';
@@ -197,20 +199,20 @@ class SyrcuitThemeLayout extends Method_Layout {
 					$items = $this->get_serialized_meta( '_syrcuit_' . $prefix . '_benefits' );
 					if ( $items ) {
 						if ( is_array( $items ) ) {
-							$this->html .= '<div class="row">';
+							$this->html .= '<div class="row p-5" id="benefits">';
 							foreach ( $items as $item ) {
 								$this->html .= '
-									<div class="col-md-6">
+									<div class="col-md-6 benefit">
 									<!-- start item -->
 										<div class="row">
 											<div class="col-md-auto">
-												<div class="">
+												<div class="img-wrapper">
 												' . ( $item['img_id'] ? wp_get_attachment_image( $item['img_id'], 'square_icon', false, array( 'class' => 'img-fluid' ) ) : '' ) . '
 												</div>
 											</div>
 											<div class="col">
 												<h3>' . $this->format_headline( $item['headline'] ) . '</h3>				
-												<div class="syrcuit-copy">
+												<div class="benefit-copy my-3">
 													' . $this->filter_content( $item['content'] ) . '
 												' . ( $item['label'] ? ( $item['url'] ? '<div class="d-grid gap-2 col-12 col-md-3  justify-content-md-end"><a href="' . $item['url'] . '" class="btn btn-lg btn-primary" target="' . $item['target'] . '">' . $item['label'] . '</a></div>' : '' ) : '' ) . '
 												</div>
