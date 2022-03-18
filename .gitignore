@@ -6,3 +6,13 @@ package-lock.json
 .sass-cache/
 custom/
 _globals.html
+.sass-cache/
+.DS_Store
+node_modules/
+.sublime-gulp.cache
+package-lock.json
+/sublime-gulp.log
+theme.css
+theme.min.css
+assets/js/scripts.js
+assets/js/scripts.min.js
