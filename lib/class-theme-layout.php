@@ -179,11 +179,11 @@ class SyrcuitThemeLayout extends Method_Layout {
 								$this->html .= '
 									<div class="row">
 									<!-- start item -->
-										<div class="syrcuit-service-content">
-											<h3>' . $this->format_headline( $item['headline'] ) . '</h3>				
+										<div id="syrcuit-service-content-'.++$x.'" class="syrcuit-service-content p-5">
+											<h2 class="mb-4">' . $this->format_headline( $item['headline'] ) . '</h2>				
 											<div class="syrcuit-copy">
 												' . $this->filter_content( $item['content'] ) . '
-											' . ( $item['label'] ? ( $item['url'] ? '<div class="d-grid gap-2 col-12 col-md-3  justify-content-md-end"><a href="' . $item['url'] . '" class="btn btn-lg btn-primary" target="' . $item['target'] . '">' . $item['label'] . '</a></div>' : '' ) : '' ) . '
+											' . ( $item['label'] ? ( $item['url'] ? '<div class=""><a href="' . $item['url'] . '" class="btn btn-light" target="' . $item['target'] . '">' . $item['label'] . '</a></div>' : '' ) : '' ) . '
 											</div>
 										</div>
 									<!-- end item -->

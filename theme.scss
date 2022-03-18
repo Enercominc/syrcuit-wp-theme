@@ -40,6 +40,48 @@ body {
 	}
 }
 
+// Frontpage
+body > div.container div.syrcuit-service-content {
+
+	h2 {
+		text-align: left;
+		font: normal normal bold 62px/30px Archivo;
+		letter-spacing: 0px;
+		color: $white;
+		text-transform: uppercase;
+		opacity: 1;
+	}
+
+	p {
+		text-align: left;
+		font: normal normal medium 26px/34px Archivo;
+		letter-spacing: 0px;
+		color: $white;
+	}
+
+	a.btn {
+		border-radius: 1rem;
+		text-align: left;
+		font: normal normal bold 20px/24px Archivo;
+		letter-spacing: 1.5px;
+		color: $gray;
+		text-transform: uppercase;
+		background: $white;
+	}
+}
+
+
+body > div.container div#syrcuit-service-content-1 {
+	background: $red;
+}
+
+body > div.container div#syrcuit-service-content-2 {
+	background: $orange;
+}
+
+body > div.container div#syrcuit-service-content-3 {
+	background: $teal;
+}
 
 footer {
 		background-color: $light-gray;
