@@ -34,7 +34,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 								$this->attr['components'] = array( 'internal-header', 'content-box', 'benefits' );
 								break;
 							case 'templates/page-template-the-team.php':
-								$this->attr['components'] = array( 'internal-header', 'content-box' );
+								$this->attr['components'] = array( 'internal-header', 'management', 'board-of-directors' );
 								break;
 							case 'templates/page-template-about.php':
 								$this->attr['components'] = array( 'internal-header', 'content-box' );
@@ -132,9 +132,10 @@ class SyrcuitThemeLayout extends Method_Layout {
 			switch ( $component ) {
 				case 'internal-header':
 					$this->html .= '						
-									<div class="row">
-											<div class="col-12 text-center">
-												' . $this->get_headline( '_syrcuit_header_headline', '<h1 class="syrcuit-h1">', '</h1>', get_the_title( $this->id ) ) . '
+									<div id="inner-header" class="row p-5">
+											<div class="col-12">
+												' . $this->get_headline( '_syrcuit_header_headline', '<h1 class="syrcuit-h1 my-5">', '</h1>', get_the_title( $this->id ) ) . '
+												' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy">', '</div>' ) . '
 											</div>
 										</div>
 									
@@ -225,6 +226,19 @@ class SyrcuitThemeLayout extends Method_Layout {
 							$this->html .= '</div>';
 						}
 					}		
+					break;
+				case 'management':
+				case 'board-of-directors':
+					$this->html .= '
+								<div class="row team-members">
+									<div class="p-5">
+										<div class="col-12">
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
+										</div>
+									</div>
+								</div>
+					';
 					break;
 				default:
 					break;

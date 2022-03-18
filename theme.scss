@@ -2,7 +2,7 @@
 THEME STYLES
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Montserrat&display=swap');
 
 // font-family: 'Archivo', sans-serif;
 
@@ -115,6 +115,30 @@ body > div.container div.syrcuit-service-content {
 }
 
 
+body > div.container #inner-header {
+	background-image: url('./assets/images/glow-rectangle.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	h1 {
+		text-align: left;
+		font: normal 700 48px/30px Archivo;
+		letter-spacing: 0px;
+		color: $white;
+		opacity: 1;
+	}
+
+	div.copy {
+		text-align: left;
+		font: normal 44px/56px Archivo;
+		letter-spacing: 0px;
+		color: $white;
+		text-shadow: 0px 3px 6px #00000029;
+		opacity: 1;
+	}
+}
+
 body > div.container div#syrcuit-service-content-1 {
 	background: $red;
 }
@@ -159,11 +183,42 @@ body.page-template-page-template-solar div#benefits {
 			justify-content: center;
 
 			img {
+				max-height: 60px;
+				max-width: 60px;			
 			}
 		}
 	}
 }
 
+
+// Team Pages
+
+
+body > div.container div.team-members {
+	h2 {
+		text-align: left;
+		font: normal normal bold 62px/30px Archivo;
+		letter-spacing: 0px;
+		color: $teal;
+		text-transform: uppercase;
+		opacity: 1;
+	}
+
+    h3 {
+    	text-align: left;
+		font: normal normal medium 26px/34px Archivo;
+		letter-spacing: 0px;
+		color: $teal;
+    }
+
+	p {
+		text-align: left;
+		text-align: left;
+		font: normal 300 36px/42px Archivo;
+		letter-spacing: 0px;
+		color: $teal;
+	}
+}
 
 footer {
 		background-color: $light-gray;

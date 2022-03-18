@@ -176,6 +176,6 @@ function syrcuit_register_page_template_the_team_metabox() {
 		)
 	);
 
-	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box' ) );
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'management', 'board-of-directors' ) );
 
 }
