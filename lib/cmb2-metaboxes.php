@@ -25,7 +25,7 @@ function syrcuit_register_page_front_metabox() {
 		)
 	);
 
-	syrcuit_load_cmb2_options( $cmb_options, array( 'elements' ) );
+	syrcuit_load_cmb2_options( $cmb_options, array( 'front-page-header', 'content-box', 'sections' ) );
 
 }
 
@@ -80,3 +80,102 @@ function syrcuit_register_page_template_tmpname_metabox() {
 }
 
 */
+
+
+// About (Page Template) Metabox
+
+add_action( 'cmb2_admin_init', 'syrcuit_register_page_template_about_metabox' );
+
+function syrcuit_register_page_template_about_metabox() {
+	$prefix = '_syrcuit_';
+
+	$cmb_options = new_cmb2_box(
+		array(
+			'id'            => $prefix . 'metabox_page_template_about',
+			'title'         => esc_html__( 'Page Template Options', 'cmb2' ),
+			'object_types'  => array( 'page' ),
+			'priority'     => 'high',
+			'show_on'      => array(
+				'key'   => 'page-template',
+				'value' => 'templates/page-template-about.php',
+			),
+		)
+	);
+
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box' ) );
+
+}
+
+
+// Solar (Page Template) Metabox
+
+add_action( 'cmb2_admin_init', 'syrcuit_register_page_template_solar_metabox' );
+
+function syrcuit_register_page_template_solar_metabox() {
+	$prefix = '_syrcuit_';
+
+	$cmb_options = new_cmb2_box(
+		array(
+			'id'            => $prefix . 'metabox_page_template_solar',
+			'title'         => esc_html__( 'Page Template Options', 'cmb2' ),
+			'object_types'  => array( 'page' ),
+			'priority'     => 'high',
+			'show_on'      => array(
+				'key'   => 'page-template',
+				'value' => 'templates/page-template-solar.php',
+			),
+		)
+	);
+
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box', 'benefits' ) );
+
+}
+
+
+// Geothermal (Page Template) Metabox
+
+add_action( 'cmb2_admin_init', 'syrcuit_register_page_template_geothermal_metabox' );
+
+function syrcuit_register_page_template_geothermal_metabox() {
+	$prefix = '_syrcuit_';
+
+	$cmb_options = new_cmb2_box(
+		array(
+			'id'            => $prefix . 'metabox_page_template_geothermal',
+			'title'         => esc_html__( 'Page Template Options', 'cmb2' ),
+			'object_types'  => array( 'page' ),
+			'priority'     => 'high',
+			'show_on'      => array(
+				'key'   => 'page-template',
+				'value' => 'templates/page-template-geothermal.php',
+			),
+		)
+	);
+
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box', 'benefits' ) );
+
+}
+
+// The Team (Page Template) Metabox
+
+add_action( 'cmb2_admin_init', 'syrcuit_register_page_template_the_team_metabox' );
+
+function syrcuit_register_page_template_the_team_metabox() {
+	$prefix = '_syrcuit_';
+
+	$cmb_options = new_cmb2_box(
+		array(
+			'id'            => $prefix . 'metabox_page_template_the_team',
+			'title'         => esc_html__( 'Page Template Options', 'cmb2' ),
+			'object_types'  => array( 'page' ),
+			'priority'     => 'high',
+			'show_on'      => array(
+				'key'   => 'page-template',
+				'value' => 'templates/page-template-the-team.php',
+			),
+		)
+	);
+
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box' ) );
+
+}

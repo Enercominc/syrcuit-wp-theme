@@ -43,6 +43,7 @@ add_action( 'after_setup_theme', 'syrcuit_register_custom_nav_menus' );
 
 add_image_size( 'header_bg', 1400, 600, true );
 
+add_image_size( 'square_icon', 84, 84, true );
 
 //-----------------------------------------------------
 // Enqueue scripts and styles
@@ -78,6 +79,11 @@ function syrcuit_register_required_plugins() {
 			'slug'      => 'cmb2',
 			'required'  => true,
 		),
+		array(
+			'name'      => 'Classic Editor',
+			'slug'      => 'classic-editor',
+			'required'  => true,
+		)
 
 	);
 
@@ -96,3 +102,31 @@ function syrcuit_register_required_plugins() {
 
 	tgmpa( $plugins, $config );
 }
+
+
+function syrcuit_remove_editor() {
+	if ( isset( $_GET['post'] ) ) {
+		$id = $_GET['post'];
+		$pt = get_post_type( $id );
+		if ( 'page' == $pt ) {
+			$template = get_post_meta( $id, '_wp_page_template', true );
+			$front_page = get_option( 'page_on_front' );
+			if ( $id == $front_page ) {
+				remove_post_type_support( 'page', 'editor' );
+			}
+			switch ( $template ) {
+				case 'templates/page-template-about.php':
+				case 'templates/page-template-solar.php':
+				case 'templates/page-template-geothermal.php':
+				case 'templates/page-template-the-team.php':
+					remove_post_type_support( 'page', 'editor' );
+					break;
+				default:
+					# code...
+					break;
+			}
+		}
+	}
+	return;
+}
+add_action( 'init', 'syrcuit_remove_editor' );
