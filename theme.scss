@@ -227,32 +227,62 @@ body.page-template-page-template-solar div#benefits {
 
 // Team Pages
 
+body.page-template-page-template-the-team {
 
-body > div.container div.team-members {
-	h2 {
-		text-align: left;
-		font: normal normal bold 62px/30px Archivo;
-		letter-spacing: 0px;
-		color: $teal;
-		text-transform: uppercase;
-		opacity: 1;
+	 &> div.container div.team-members {
+		h2 {
+			text-align: left;
+			font: normal normal bold 62px/30px Archivo;
+			letter-spacing: 0px;
+			color: $teal;
+			text-transform: uppercase;
+			opacity: 1;
+		}
+
+	    h3 {
+	    	text-align: left;
+			font: normal normal medium 26px/34px Archivo;
+			letter-spacing: 0px;
+			color: $teal;
+	    }
+
+		p {
+			text-align: left;
+			text-align: left;
+			font: normal 300 36px/42px Archivo;
+			letter-spacing: 0px;
+			color: $teal;
+		}
+
+		
 	}
 
-    h3 {
-    	text-align: left;
-		font: normal normal medium 26px/34px Archivo;
-		letter-spacing: 0px;
-		color: $teal;
-    }
+	div#members {
+			img {
+				border-radius: 50%;
+				max-width: 189px;
+				max-height: 189px;
+			}
 
-	p {
-		text-align: left;
-		text-align: left;
-		font: normal 300 36px/42px Archivo;
-		letter-spacing: 0px;
-		color: $teal;
-	}
+			h3 {
+				text-align: left;
+				font: normal 600 22px/24px Archivo;
+				letter-spacing: 0px;
+				color: $red;
+				text-transform: uppercase;
+			}
+
+			h4 {
+				text-align: left;
+				font: normal 700 16px/24px Archivo;
+				letter-spacing: 0px;
+				color: $gray;
+			}
+		}
+
 }
+
+
 
 body > div.container > footer.row {
 		background-color: $light-gray;

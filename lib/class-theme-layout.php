@@ -257,6 +257,32 @@ class SyrcuitThemeLayout extends Method_Layout {
 									</div>
 								</div>
 					';
+					$members = $this->get_serialized_meta( '_syrcuit_' . $prefix . '_members' );
+					if ( $members ) {
+						if ( is_array( $members ) ) {
+							$this->html .= '<div class="row px-5" id="members">';
+							foreach ( $members as $member ) {
+								$this->html .= '
+									<div class="col col-md-4 member">
+									<!-- start member -->									
+											<div class="">
+												<div class="img-wrapper">
+												' . ( $member['img_id'] ? wp_get_attachment_image( $member['img_id'], 'member_image', false, array( 'class' => 'img-fluid mb-3' ) ) : '' ) . '
+												</div>
+											
+												<h3>' . $this->format_headline( $member['full_name'] ) . '</h3>	
+												<h4>' . $this->format_headline( $member['position'] ) . '</h4>				
+												<div class="biography">
+													' . $this->filter_content( $member['biography'] ) . '
+												</div>
+											</div>										
+									<!-- end item -->
+									</div>
+									';
+							}
+							$this->html .= '</div>';
+						}
+					}	
 					break;
 				default:
 					break;

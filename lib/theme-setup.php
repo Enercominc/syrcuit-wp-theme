@@ -45,6 +45,8 @@ add_image_size( 'header_bg', 1400, 600, true );
 
 add_image_size( 'square_icon', 84, 84, true );
 
+add_image_size( 'member_image', 200, 200, true );
+
 //-----------------------------------------------------
 // Enqueue scripts and styles
 //-----------------------------------------------------
