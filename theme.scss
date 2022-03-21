@@ -94,6 +94,12 @@ body > div.container div.syrcuit-service-content {
 		color: $white;
 	}
 
+	ul {
+	  margin: 0.75em 0;
+	  padding: 0 0 0 1.25em;
+	  list-style: none;
+	}
+
 	li {
 		text-align: left;
 		font: normal 600 18px/20px Archivo;
@@ -103,8 +109,23 @@ body > div.container div.syrcuit-service-content {
 		margin-bottom: .75rem;
 	}
 
+	li:before { 
+	  content: "";
+	  border-color: transparent $white;
+	  border-style: solid;
+	  border-width: 0.45em 0 0.45em 0.45em;
+	  display: block;
+	  height: 0;
+	  width: 0;
+	  left: -1em;
+	  top: 1.0em;
+	  position: relative;
+	}
+
+	
+
 	a.btn {
-		border-radius: 1rem;
+		border-radius: 1.5rem;
 		text-align: left;
 		font: normal normal bold 20px/24px Archivo;
 		letter-spacing: 1.5px;
@@ -140,15 +161,27 @@ body > div.container #inner-header {
 }
 
 body > div.container div#syrcuit-service-content-1 {
-	background: $red;
+	background-color: $red;
+	background-image: url('./assets/images/the-team-background.png');
+	background-position: right top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 body > div.container div#syrcuit-service-content-2 {
-	background: $orange;
+	background-color: $orange;
+	background-image: url('./assets/images/solar-background.png');
+	background-position: left top;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 body > div.container div#syrcuit-service-content-3 {
-	background: $teal;
+	background-color: $teal;
+	background-image: url('./assets/images/geothermal-background.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 // Solar 

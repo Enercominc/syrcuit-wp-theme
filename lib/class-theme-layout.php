@@ -165,9 +165,11 @@ class SyrcuitThemeLayout extends Method_Layout {
 					$this->html .= '
 								<div class="row" id="content">
 									<div class="p-5">
-										<div class="col-12">
-											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
-											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
+										<div class="p-5">
+											<div class="col-12">
+												' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+												' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
+											</div>
 										</div>
 									</div>
 								</div>
@@ -178,19 +180,35 @@ class SyrcuitThemeLayout extends Method_Layout {
 					$items = $this->get_serialized_meta( '_syrcuit_' . $prefix . '_sections' );
 					if ( $items ) {
 						if ( is_array( $items ) ) {
+							$row = 1;
 							foreach ( $items as $item ) {
+								$classes = 'col';
+								switch ($row) {
+								    case 1:
+								        $classes = 'col-md-9';
+								        break;
+								    case 2:
+								        $classes = 'col-md-9 offset-md-3';
+								        break;
+								    case 3:
+								        $classes = 'col-md-8';
+								        break;
+								}
 								$this->html .= '
 									<div class="row">
 									<!-- start item -->
-										<div id="syrcuit-service-content-'.++$x.'" class="syrcuit-service-content p-5">
-											<h2 class="mb-4">' . $this->format_headline( $item['headline'] ) . '</h2>				
-											<div class="syrcuit-copy">
-												' . $this->filter_content( $item['content'] ) . '
-											' . ( $item['label'] ? ( $item['url'] ? '<div class=""><a href="' . $item['url'] . '" class="btn btn-light" target="' . $item['target'] . '">' . $item['label'] . '</a></div>' : '' ) : '' ) . '
+										<div id="syrcuit-service-content-'.$row.'" class="syrcuit-service-content p-5">
+											<div class="'.$classes.' p-5">
+												<h2 class="mb-4">' . $this->format_headline( $item['headline'] ) . '</h2>				
+												<div class="syrcuit-copy">
+													' . $this->filter_content( $item['content'] ) . '
+												' . ( $item['label'] ? ( $item['url'] ? '<div class=""><a href="' . $item['url'] . '" class="btn btn-light px-4 py-2 mt-5" target="' . $item['target'] . '">' . $item['label'] . '</a></div>' : '' ) : '' ) . '
+												</div>
 											</div>
 										</div>
 									<!-- end item -->
 									</div>';
+									$row++;
 							}
 						}
 					}		
