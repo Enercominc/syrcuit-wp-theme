@@ -244,8 +244,7 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 							'id'   => 'img',
 							'type' => 'file',
 						)
-					);
-				
+					);				
 				break;
 			case 'management':
 				$section_title = 'Management <span style="font-weight: 400;">Members</span>';
@@ -274,7 +273,58 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 						'type'     => 'wysiwyg',
 						'desc' => 'Provide content for the team.',
 					)
-				);				
+				);
+				$members = $obj->add_field(
+					array(
+						'id'          => '_syrcuit_' . $prefix . '_members',
+						'type'        => 'group',
+						'description' => __( 'Below, add and configure each member of the page.', 'syrcuit-mu' ),
+						// 'repeatable'  => false, // use false if you want non-repeatable group
+						'options'     => array(
+							'group_title'   => __( 'Member {#}', 'syrcuit-mu' ), // since version 1.1.4, {#} gets replaced by row number
+							'add_button'    => __( 'Add Another Member', 'syrcuit-mu' ),
+							'remove_button' => __( 'Remove Member', 'syrcuit-mu' ),
+							'sortable'      => true,
+							'closed'        => true, // true to have the groups closed by default
+						),
+					)
+				);
+				$obj->add_group_field(
+					$members,
+					array(
+						'name' => __( 'Full Name', 'syrcuit-mu' ),
+						'desc' => __( syrcuit_get_tags_badge() . 'Provide a Full Name for this member.', 'syrcuit-mu' ),
+						'id'   => 'full_name',
+						'type' => 'text',
+					)
+				);
+				$obj->add_group_field(
+					$members,
+					array(
+						'name' => __( 'Position', 'syrcuit-mu' ),
+						'desc' => __( syrcuit_get_tags_badge() . 'Provide a position for this member.', 'syrcuit-mu' ),
+						'id'   => 'position',
+						'type' => 'text',
+					)
+				);
+				$obj->add_group_field(
+					$members,
+						array(
+							'name' => __( 'Headshot', 'syrcuit-mu' ),
+							'desc' => __( 'Provide an image to display next to the member.', 'rra' ),
+							'id'   => 'img',
+							'type' => 'file',
+						)
+				);	
+				$obj->add_group_field(
+					$members,
+					array(
+						'name' => __( 'Biography', 'syrcuit-mu' ),
+						'desc' => __( 'Provide a short biography.', 'syrcuit-mu' ),
+						'id'   => 'biography',
+						'type' => 'wysiwyg',
+					)
+				);		
 				break;
 			case 'board-of-directors':
 				$section_title = 'Board of Director <span style="font-weight: 400;">Members</span>';
@@ -303,7 +353,58 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 						'type'     => 'wysiwyg',
 						'desc' => 'Provide content for the team.',
 					)
-				);				
+				);
+				$members = $obj->add_field(
+					array(
+						'id'          => '_syrcuit_' . $prefix . '_members',
+						'type'        => 'group',
+						'description' => __( 'Below, add and configure each member of the page.', 'syrcuit-mu' ),
+						// 'repeatable'  => false, // use false if you want non-repeatable group
+						'options'     => array(
+							'group_title'   => __( 'Member {#}', 'syrcuit-mu' ), // since version 1.1.4, {#} gets replaced by row number
+							'add_button'    => __( 'Add Another Member', 'syrcuit-mu' ),
+							'remove_button' => __( 'Remove Member', 'syrcuit-mu' ),
+							'sortable'      => true,
+							'closed'        => true, // true to have the groups closed by default
+						),
+					)
+				);
+				$obj->add_group_field(
+					$members,
+					array(
+						'name' => __( 'Full Name', 'syrcuit-mu' ),
+						'desc' => __( syrcuit_get_tags_badge() . 'Provide a Full Name for this member.', 'syrcuit-mu' ),
+						'id'   => 'full_name',
+						'type' => 'text',
+					)
+				);
+				$obj->add_group_field(
+					$members,
+					array(
+						'name' => __( 'Position', 'syrcuit-mu' ),
+						'desc' => __( syrcuit_get_tags_badge() . 'Provide a position for this member.', 'syrcuit-mu' ),
+						'id'   => 'position',
+						'type' => 'text',
+					)
+				);
+				$obj->add_group_field(
+					$members,
+						array(
+							'name' => __( 'Headshot', 'syrcuit-mu' ),
+							'desc' => __( 'Provide an image to display next to the member.', 'rra' ),
+							'id'   => 'img',
+							'type' => 'file',
+						)
+				);	
+				$obj->add_group_field(
+					$members,
+					array(
+						'name' => __( 'Biography', 'syrcuit-mu' ),
+						'desc' => __( 'Provide a short biography.', 'syrcuit-mu' ),
+						'id'   => 'biography',
+						'type' => 'wysiwyg',
+					)
+				);					
 				break;
 			default:
 				break;

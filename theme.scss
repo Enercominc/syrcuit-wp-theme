@@ -32,7 +32,7 @@ p {
 }
 
 body {
-	background: $dark-gray;
+	background: $white;
 
 	> .container {
 		// background: $white;
@@ -254,7 +254,7 @@ body > div.container div.team-members {
 	}
 }
 
-footer {
+body > div.container > footer.row {
 		background-color: $light-gray;
 		background-image: url('./assets/images/footer-background.png');
 		background-position: top left;
@@ -267,6 +267,7 @@ footer {
 			letter-spacing: 0px;
 			color: $teal;
 			text-transform: uppercase;
+			margin-left: 30%;
 		}
 
 		.syrcuit-footer-contact {

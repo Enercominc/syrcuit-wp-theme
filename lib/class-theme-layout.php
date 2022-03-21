@@ -88,14 +88,14 @@ class SyrcuitThemeLayout extends Method_Layout {
 
 	protected function build_footer() {
 		$this->html .= '
-			</div><!-- end container -->
-			<footer class="pt-5 clearfix">
+			
+			<footer class="row p-5 clearfix">
 				<div class="syrcuit-footer-content container clearfix">
 					<div class="row">
 						<div class="col-12 col-md-3">
-							<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo.png" class="ms-n5 mb-3" id="site-logo" width="320" height="69" alt="Syrcuit logo">
+							<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo.png" class="mb-3" id="site-logo" width="320" height="69" alt="Syrcuit logo">
 
-							<div class="syrcuit-footer-addr ms-4">
+							<div class="syrcuit-footer-addr">
 								' . ( $this->get_option( 'addr_line1' ) ? '<div>' . $this->get_option( 'addr_line1' ) . '</div>' : '' ) . '
 								' . ( $this->get_option( 'addr_line2' ) ? '<div>' . $this->get_option( 'addr_line2' ) . '</div>' : '' ) . '
 								' . ( $this->get_option( 'addr_line3' ) ? '<div>' . $this->get_option( 'addr_line3' ) . '</div>' : '' ) . '
@@ -118,7 +118,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 					</div>					
 				</div>		
 			</footer>
-			
+			</div><!-- end container -->
 		';
 		return;
 	}
