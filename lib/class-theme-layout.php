@@ -259,7 +259,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 				case 'management':
 				case 'board-of-directors':
 					$this->html .= '
-								<div class="row team-members">
+								<div class="row team-members '.$component.'">
 									<div class="p-5">
 										<div class="col-12">
 											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
