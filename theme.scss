@@ -258,10 +258,43 @@ body.page-template-page-template-the-team {
 	}
 
 	div#members {
-			img {
+			.img-wrapper {
 				border-radius: 50%;
 				max-width: 189px;
 				max-height: 189px;
+				width: 189px;
+				height: 189px;
+				
+				background: $red;
+				display: block;
+				overflow: hidden;
+
+				img {
+
+				}
+			}
+
+			.accordion-button{
+				padding-left: 0;
+				padding-bottom: 0;
+
+				&:not(.collapsed) {
+					background: $white !important;
+					border: none !important;
+					box-shadow: none !important;
+				}
+			}
+
+			.accordion-body {
+			    padding: 1rem 0;
+			    font: normal 18px/24px Archivo;
+			    font-weight: normal;
+			    
+			}
+			.show {
+				.accordion-body {
+			    	border-top: 1px solid $gray;	
+				}
 			}
 
 			h3 {
