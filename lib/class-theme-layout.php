@@ -76,7 +76,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 			<footer class="row p-5 clearfix">
 				<div class="syrcuit-footer-content container clearfix">
 					<div class="row">
-						<div class="col-12 col-md-3">
+						<div class="col-12 col-md-4">
 							<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo.png" class="mb-3" id="site-logo" width="320" height="69" alt="Syrcuit logo">
 
 							<div class="syrcuit-footer-addr">
@@ -87,7 +87,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 							</div>
 
 						</div>
-						<div class="col-12 col-md-8 offset-md-1">
+						<div class="col-12 col-md-8">
 							
 							<div class="row">
 								' . $this->get_content_from_option( 'footer_contact', '<div class="syrcuit-footer-contact">', '</div>' ) . '

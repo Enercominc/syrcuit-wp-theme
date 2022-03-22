@@ -139,9 +139,12 @@ body > div.container div.syrcuit-service-content {
 
 body > div.container #inner-header {
 	// position: relative;
-
-	.col {
+	
+	> .col {
 		position: relative;
+		// padding-right: calc(var(--bs-gutter-x) * 1);
+	    // padding-left: calc(var(--bs-gutter-x) * 1);
+
 	}
 
 	video {
@@ -171,6 +174,9 @@ body > div.container #inner-header {
 		
 		margin-left: calc(var(--bs-gutter-x) * -.5);
 		width: calc(var(--bs-gutter-x) + 100%);
+		padding-right: calc(var(--bs-gutter-x) * .5);
+	    padding-left: calc(var(--bs-gutter-x) * .5);
+
 
 		// &:before {
 		// 	content: '';
@@ -396,7 +402,7 @@ body > div.container > footer.row {
 			letter-spacing: 0px;
 			color: $teal;
 			text-transform: uppercase;
-			margin-left: 30%;
+			margin-left: 27%;
 		}
 
 		.syrcuit-footer-contact {
