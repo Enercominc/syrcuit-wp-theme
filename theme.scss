@@ -2,7 +2,7 @@
 THEME STYLES
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap');
 
 // font-family: 'Archivo', sans-serif;
 
@@ -46,7 +46,7 @@ body {
 body > div.container div#content {
 	h2 {
 		text-align: left;
-		font: normal normal bold 62px/75px Archivo;
+		font: normal normal bold 56px/62px Archivo;
 		letter-spacing: 0px;
 		color: $teal;
 		text-transform: uppercase;
@@ -55,14 +55,15 @@ body > div.container div#content {
 
     h3 {
     	text-align: left;
-		font: normal normal medium 26px/34px Archivo;
+		font: normal medium 26px/34px Archivo;
 		letter-spacing: 0px;
 		color: $teal;
     }
 
 	p, ul, li {
 		text-align: left;
-		font: normal normal medium 26px/34px Archivo;
+		font: normal 24px/32px Archivo;
+		font-weight: 400;
 		letter-spacing: 0px;
 		color: $teal;
 	}
@@ -73,7 +74,7 @@ body > div.container div.syrcuit-service-content {
 
 	h2 {
 		text-align: left;
-		font: normal normal bold 62px/30px Archivo;
+		font: normal normal bold 56px/62px Archivo;
 		letter-spacing: 0px;
 		color: $white;
 		text-transform: uppercase;
@@ -82,7 +83,8 @@ body > div.container div.syrcuit-service-content {
 
 	h3 {
 		text-align: left;
-		font: normal 700 18px/20px Archivo;
+		font: normal 18px/20px Archivo;
+		font-weight: 600;
 		letter-spacing: 0px;
 		color: $white;
 		text-transform: uppercase;
@@ -90,38 +92,40 @@ body > div.container div.syrcuit-service-content {
 
 	p {
 		text-align: left;
-		font: normal 500 26px/34px Archivo;
+		font: normal 26px/34px Archivo;
+		font-weight: 400;
 		letter-spacing: 0px;
 		color: $white;
 	}
 
 	ul {
 	  margin: 0.75em 0;
-	  padding: 0 0 0 1.25em;
-	  list-style: none;
+	  // padding: 0 0 0 1.25em;
+	  // list-style: none;
 	}
 
 	li {
 		text-align: left;
-		font: normal 600 18px/20px Archivo;
+		font: normal 18px/20px Archivo;
+		font-weight: 400;
 		letter-spacing: 0px;
 		color: $white;
 		opacity: 1;
 		margin-bottom: .75rem;
 	}
 
-	li:before { 
-	  content: "";
-	  border-color: transparent $white;
-	  border-style: solid;
-	  border-width: 0.45em 0 0.45em 0.45em;
-	  display: block;
-	  height: 0;
-	  width: 0;
-	  left: -1em;
-	  top: 1.0em;
-	  position: relative;
-	}
+	// li:before { 
+	//   content: "";
+	//   border-color: transparent $white;
+	//   border-style: solid;
+	//   border-width: 0.45em 0 0.45em 0.45em;
+	//   display: block;
+	//   height: 0;
+	//   width: 0;
+	//   left: -1em;
+	//   top: 1.0em;
+	//   position: relative;
+	// }
 
 	
 
@@ -135,6 +139,8 @@ body > div.container div.syrcuit-service-content {
 		background: $white;
 	}
 }
+
+
 
 
 body > div.container #inner-header {
@@ -196,7 +202,7 @@ body > div.container #inner-header {
 
 	h1 {
 		text-align: left;
-		font: normal 700 48px/30px Archivo;
+		font: normal 700 44px/30px Archivo;
 		letter-spacing: 0px;
 		color: $white;
 		opacity: 1;
@@ -204,13 +210,14 @@ body > div.container #inner-header {
 
 	h2 {
 		text-align: left;
-		font: 44px/56px Archivo;
+		font: 40px/56px Archivo;
 		font-weight: normal;
 		letter-spacing: 0px;
 		color: $white;
 		opacity: 1;
 		border-top: 1px solid $white;
 		padding-top: 1rem;
+		text-transform: uppercase;
 	}
 
 	div.copy {
@@ -224,12 +231,20 @@ body > div.container #inner-header {
 
 	.navbar-nav .nav-link {
 		font: normal 18px/20px Archivo;
-		font-weight: 600;
+		font-weight: 500;
 		text-transform: uppercase;
 		padding-top: .5rem;
 		padding-bottom: .5rem;
 		color: $dark-gray;
 	}
+}
+
+body.home > div.container #inner-header {
+	
+.navbar-nav .nav-link {
+		color: $white;
+	}
+
 }
 
 body > div.container div#syrcuit-service-content-1 {
@@ -303,7 +318,7 @@ body.page-template-page-template-the-team {
 	 &> div.container div.team-members {
 		h2 {
 			text-align: left;
-			font: normal normal bold 62px/30px Archivo;
+			font: normal normal bold 56px/62px Archivo;
 			letter-spacing: 0px;
 			color: $teal;
 			text-transform: uppercase;
@@ -358,9 +373,13 @@ body.page-template-page-template-the-team {
 
 			.accordion-body {
 			    padding: 1rem 0;
-			    font: normal 18px/24px Archivo;
-			    font-weight: normal;
-			    border-top: 1px solid $gray;	
+			    border-top: 1px solid $accent-gray;	
+
+			    p {
+			    	font: normal 18px/24px Archivo;
+			    	font-weight: normal;
+			    	color: $gray;
+			    }
 			}
 			.show {
 				.accordion-body {
@@ -432,7 +451,8 @@ body > div.container > footer.row {
 			}
 			p {
 				text-align: left;
-				font: normal 500 18px/24px Archivo;
+				font: normal 18px/24px Archivo;
+				font-weight: 400;
 				letter-spacing: 0px;
 				color: #3A606F;
 			}
@@ -464,6 +484,7 @@ body > div.container > footer.row {
 				font-weight: normal;
 				text-transform: uppercase;
 				color: $medium-gray;
+				font: Archivo;
 			}
 
 			.gform_wrapper.gravity-theme textarea {
@@ -488,9 +509,13 @@ body > div.container > footer.row {
 
 		.syrcuit-footer-copyright {
 			text-align: left;
-			font: normal normal normal 18px/22px Montserrat;
+			font: normal 16px/22px Archivo;
 			letter-spacing: 0px;
 			color: $medium-gray;
+
+			a {
+				text-decoration: none;
+			}
 		}
 		
 

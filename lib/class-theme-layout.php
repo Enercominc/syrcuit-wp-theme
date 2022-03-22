@@ -275,7 +275,8 @@ class SyrcuitThemeLayout extends Method_Layout {
 							$count = 1;
 							foreach ( $members as $member ) {
 								$this->html .= '
-									<div class="col col-md-4 member">
+									<div class="col col-md-4 member mb-2">
+										<div class="pe-4">
 									<!-- start member -->									
 										<div class="img-wrapper">
 										' . ( $member['img_id'] ? wp_get_attachment_image( $member['img_id'], 'member_image', false, array( 'class' => 'img-fluid mb-3' ) ) : '' ) . '
@@ -294,7 +295,8 @@ class SyrcuitThemeLayout extends Method_Layout {
 												      </div>
 												    </div>
 												  </div>
-											</div>										
+											</div>		
+											</div>								
 									<!-- end item -->
 									</div>
 									';
