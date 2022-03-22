@@ -41,6 +41,14 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 						'id'   => '_syrcuit_' . $prefix . '_video',
 						'type' => 'file',
 					)
+				);
+				$obj->add_field(
+					array(
+						'name' => __( 'Static Image Background', 'rra' ),
+						'desc' => __( 'Provide an static image to display behind to the header.', 'rra' ),
+						'id'   => '_syrcuit_' . $prefix . '_image',
+						'type' => 'file',
+					)
 				);	
 				$obj->add_field(
 					array(

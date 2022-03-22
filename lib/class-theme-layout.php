@@ -123,7 +123,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 					// die();
 					$this->html .= '						
 									<div id="inner-header" class="row">
-										<div class="col">
+										<div class="col" ' . ( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ) ? 'style="background-image: url('.wp_get_attachment_image_src( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ), 'full', false )[0].')"' : '' ) . '>
 											<video playsinline autoplay muted loop id="myVideo">
 											  <source src="' . $this->get_meta( '_syrcuit_' . $prefix . '_video' ) . '" type="video/mp4">
 											</video>
