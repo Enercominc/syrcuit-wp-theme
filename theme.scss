@@ -403,6 +403,23 @@ body > div.container > footer.row {
 			color: $teal;
 			text-transform: uppercase;
 			margin-left: 27%;
+
+			.syrcuit-footer-social {
+				padding-top: 1.25rem;
+				ul {
+					display: inline-block;
+					padding: 0;
+					margin: 0;
+					li {
+						list-style: none;
+						display: inline-block;
+						margin-right: 0.5rem;
+						a {
+							color: $teal;
+						}
+					}
+				}
+			}
 		}
 
 		.syrcuit-footer-contact {

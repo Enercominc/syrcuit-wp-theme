@@ -84,6 +84,10 @@ class SyrcuitThemeLayout extends Method_Layout {
 								' . ( $this->get_option( 'addr_line2' ) ? '<div>' . $this->get_option( 'addr_line2' ) . '</div>' : '' ) . '
 								' . ( $this->get_option( 'addr_line3' ) ? '<div>' . $this->get_option( 'addr_line3' ) . '</div>' : '' ) . '
 								' . ( $this->get_option( 'phone_num' ) ? '<div>' . $this->get_option( 'phone_num' ) . '</div>' : '' ) . '
+								<div class="syrcuit-footer-social">
+								' . $this->build_social_icons( 's-ics', 36 ) . '
+								</div>
+								
 							</div>
 
 						</div>
