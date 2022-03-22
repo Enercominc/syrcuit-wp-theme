@@ -138,10 +138,55 @@ body > div.container div.syrcuit-service-content {
 
 
 body > div.container #inner-header {
-	background-image: url('./assets/images/glow-rectangle.png');
-	background-position: center;
-	background-size: cover;
-	background-repeat: no-repeat;
+	// position: relative;
+
+	.col {
+		position: relative;
+	}
+
+	video {
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+
+		// object-fit: cover;
+		object-fit: cover;
+		// padding-right: calc(var(--bs-gutter-x) * .5);
+    	margin-left: calc(var(--bs-gutter-x) * -.5);
+
+		// background: $black;
+	}
+
+	
+	
+	#inner-header-content {
+		z-index: 10;
+		position: relative;
+
+		background-image: url('./assets/images/glow-rectangle.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		
+		margin-left: calc(var(--bs-gutter-x) * -.5);
+		width: calc(var(--bs-gutter-x) + 100%);
+
+		// &:before {
+		// 	content: '';
+		// 	background-image: url('./assets/images/glow-rectangle.png');
+		// 	background-position: center;
+		// 	background-size: cover;
+		// 	background-repeat: no-repeat;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	display: block;
+		// 	position: relative;
+		// 	z-index: 999;
+		// 	top:0;
+		// 	left: 0;
+		// }
+	}
 
 	h1 {
 		text-align: left;

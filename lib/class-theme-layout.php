@@ -115,8 +115,17 @@ class SyrcuitThemeLayout extends Method_Layout {
 			$prefix = str_replace( '-', '_', $component );
 			switch ( $component ) {
 				case 'internal-header':
+					// var_dump($this->get_meta( '_syrcuit_' . $prefix . '_video' ));
+					// die();
 					$this->html .= '						
-									<div id="inner-header" class="row p-5">
+									<div id="inner-header" class="row">
+										<div class="col">
+											<video playsinline autoplay muted loop id="myVideo">
+											  <source src="' . $this->get_meta( '_syrcuit_' . $prefix . '_video' ) . '" type="video/mp4">
+											</video>
+											
+											<div id="inner-header-content" >
+										<div class="p-5 row">
 										<div class="col-md-7">
 													<a href="/">
 														<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo-ko.png" class="mb-3" id="site-logo" width="320" height="69" alt="Syrcuit logo" />
@@ -130,6 +139,10 @@ class SyrcuitThemeLayout extends Method_Layout {
 											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h1 class="syrcuit-h1 my-5">', '</h1>' ) . '
 											' . $this->get_headline( '_syrcuit_' . $prefix . '_sub_headline', '<h2 class="syrcuit-h1 my-5">', '</h2>' ) . '
 											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy">', '</div>' ) . '
+										</div>
+										</div>
+										</div>
+										
 										</div>
 									</div>
 									

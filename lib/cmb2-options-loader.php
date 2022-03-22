@@ -36,6 +36,14 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 				);
 				$obj->add_field(
 					array(
+						'name' => __( 'Video Background', 'rra' ),
+						'desc' => __( 'Provide an video to display behind to the header.', 'rra' ),
+						'id'   => '_syrcuit_' . $prefix . '_video',
+						'type' => 'file',
+					)
+				);	
+				$obj->add_field(
+					array(
 						'name'     => __( 'Headline', 'syrcuit-mu' ),
 						'id'   => '_syrcuit_' . $prefix . '_headline',
 						'type'     => 'text',
