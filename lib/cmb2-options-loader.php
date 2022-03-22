@@ -24,33 +24,7 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 						'type'     => 'text',
 					)
 				);
-				break;
-			case 'front-page-header':
-				$obj->add_field(
-					array(
-						'name' => __( '<span style="font-size: 1.75rem; font-weight: 900;">Header <span style="font-weight: 400;">Options</span></span>', 'rra' ),
-						'desc' => __( 'Below, configure the header for this page. To set or change the background image for the header, use the <em>Featured Image</em> option in the right sidebar.', 'rra' ),
-						'id'   => '_syrcuit_header_info',
-						'type' => 'title',
-					)
-				);
-				$obj->add_field(
-					array(
-						'name'     => __( 'Headline', 'syrcuit-mu' ),
-						'id'   => '_syrcuit_header_headline',
-						'type'     => 'text',
-						'desc' => syrcuit_get_tags_badge() . '(Optional) Provide a headline, or leave blank to use the page title.',
-					)
-				);
-				$obj->add_field(
-					array(
-						'name'     => __( 'Sub Headline', 'syrcuit-mu' ),
-						'id'   => '_syrcuit_header_sub_headline',
-						'type'     => 'text',
-						'desc' => syrcuit_get_tags_badge() . '(Optional) Provide a sub headline, or leave blank.',
-					)
-				);				
-				break;
+				break;			
 			case 'internal-header':
 				$obj->add_field(
 					array(
@@ -63,11 +37,19 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 				$obj->add_field(
 					array(
 						'name'     => __( 'Headline', 'syrcuit-mu' ),
-						'id'   => '_syrcuit_header_headline',
+						'id'   => '_syrcuit_' . $prefix . '_headline',
 						'type'     => 'text',
 						'desc' => syrcuit_get_tags_badge() . '(Optional) Provide a headline, or leave blank to use the page title.',
 					)
 				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Sub Headline', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_sub_headline',
+						'type'     => 'text',
+						'desc' => syrcuit_get_tags_badge() . '(Optional) Provide a sub headline, or leave blank.',
+					)
+				);		
 				$obj->add_field(
 					array(
 						'name'     => __( 'Content', 'syrcuit-mu' ),

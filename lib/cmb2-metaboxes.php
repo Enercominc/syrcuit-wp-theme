@@ -25,7 +25,7 @@ function syrcuit_register_page_front_metabox() {
 		)
 	);
 
-	syrcuit_load_cmb2_options( $cmb_options, array( 'front-page-header', 'content-box', 'sections' ) );
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box', 'sections' ) );
 
 }
 

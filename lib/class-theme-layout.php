@@ -64,24 +64,8 @@ class SyrcuitThemeLayout extends Method_Layout {
 		';
 		$this->html .= '
 			<div class="container">
-				<div id="syrcuit-primary-nav">
-					<div class="row justify-content-center">
-						<div class="col-12">
-							<div class="navbar-wrap">
-								<nav class="navbar navbar-expand-lg navbar-light">
-									<a class="navbar-brand" href="/"><span class="visually-hidden"></span></a>
-									<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-										<span class="navbar-toggler-icon"></span>
-									</button>
-									<div class="collapse navbar-collapse" id="navbarNav">
-										' . wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2, 'container' => '', 'menu_class' => '', 'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto %2$s">%3$s</ul>','walker' => new bootstrap_5_wp_nav_menu_walker(), 'fallback_cb' => '__return_false', 'echo' => false, ) ) . '
-									</div>
-								</nav>
-							</div>
-						</div>
-					</div>
-				</div>
-			<!-- no closing container div -->
+				
+			<!-- no closing container div -->		
 		';
 		return;
 	}
@@ -133,11 +117,21 @@ class SyrcuitThemeLayout extends Method_Layout {
 				case 'internal-header':
 					$this->html .= '						
 									<div id="inner-header" class="row p-5">
-											<div class="col-12">
-												' . $this->get_headline( '_syrcuit_header_headline', '<h1 class="syrcuit-h1 my-5">', '</h1>', get_the_title( $this->id ) ) . '
-												' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy">', '</div>' ) . '
-											</div>
+										<div class="col-md-7">
+													<a href="/">
+														<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo-ko.png" class="mb-3" id="site-logo" width="320" height="69" alt="Syrcuit logo" />
+													</a>
 										</div>
+										<div class="col-sm-5 text-end">
+											' . wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2, 'container' => '', 'menu_class' => '', 'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto nav flex-column justify-content-end %2$s">%3$s</ul>','walker' => new bootstrap_5_wp_nav_menu_walker(), 'fallback_cb' => '__return_false', 'echo' => false, ) ) . '
+														
+										</div>
+										<div class="col-12 p-5">
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h1 class="syrcuit-h1 my-5">', '</h1>' ) . '
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_sub_headline', '<h2 class="syrcuit-h1 my-5">', '</h2>' ) . '
+											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy">', '</div>' ) . '
+										</div>
+									</div>
 									
 					';
 					break;	
@@ -260,7 +254,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 					$members = $this->get_serialized_meta( '_syrcuit_' . $prefix . '_members' );
 					if ( $members ) {
 						if ( is_array( $members ) ) {
-							$this->html .= '<div class="row px-5" id="members">';
+							$this->html .= '<div class="row px-5 mb-5" id="members">';
 							$count = 1;
 							foreach ( $members as $member ) {
 								$this->html .= '
