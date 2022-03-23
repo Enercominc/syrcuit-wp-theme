@@ -202,10 +202,10 @@ class SyrcuitThemeLayout extends Method_Layout {
 								        $classes = 'col col-lg-9';
 								        break;
 								    case 2:
-								        $classes = 'col-lg-9 offset-lg-3';
+								        $classes = 'col col-lg-9 offset-lg-3';
 								        break;
 								    case 3:
-								        $classes = 'col-lg-8';
+								        $classes = 'col col-lg-9';
 								        break;
 								}
 								$this->html .= '
@@ -235,7 +235,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 							$this->html .= '<div class="row p-5" id="benefits">';
 							foreach ( $items as $item ) {
 								$this->html .= '
-									<div class="col-md-6 benefit">
+									<div class="col-md-6 benefit mb-3">
 									<!-- start item -->
 										<div class="row">
 											<div class="col-auto">

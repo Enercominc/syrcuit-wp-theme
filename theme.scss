@@ -27,6 +27,20 @@ $enable-negative-margins: true;
 
 @import "inc/bootstrap/scss/bootstrap.scss";
 
+// // Source mixin
+// @mixin make-container($padding-x: $container-padding-x) {
+//   width: 100%;
+//   padding-right: calc($padding-x * 3);
+//   padding-left: calc($padding-x * 3);
+//   margin-right: auto;
+//   margin-left: auto;
+// }
+
+// // Usage
+// .container {
+//   @include make-container();
+// }
+
 p {
 	margin-bottom: 1rem;
 }
@@ -50,7 +64,7 @@ body > div.container {
 body > div.container div#content {
 	h2 {
 		text-align: left;
-		font: normal normal bold 56px/62px Archivo;
+		font: normal normal bold 52px/58px Archivo;
 		letter-spacing: 0px;
 		color: $teal;
 		text-transform: uppercase;
@@ -136,7 +150,8 @@ body > div.container div.syrcuit-service-content {
 	a.btn {
 		border-radius: 1.5rem;
 		text-align: left;
-		font: normal normal bold 20px/24px Archivo;
+		font: normal 18px/24px Archivo;
+		font-weight: 600;
 		letter-spacing: 1.5px;
 		color: $gray;
 		text-transform: uppercase;
@@ -211,10 +226,12 @@ body > div.container #inner-header {
 
 	h1 {
 		text-align: left;
-		font: normal 700 44px/30px Archivo;
+		font: normal 44px/30px Archivo;
+		font-weight: 700;
 		letter-spacing: 0px;
 		color: $white;
 		opacity: 1;
+		text-transform: uppercase;
 	}
 
 	h2 {
@@ -231,7 +248,8 @@ body > div.container #inner-header {
 
 	div.copy {
 		text-align: left;
-		font: normal 44px/56px Archivo;
+		font: normal 36px/50px Archivo;
+		font-weight: 300;
 		letter-spacing: 0px;
 		color: $white;
 		text-shadow: 0px 3px 6px #00000029;
@@ -284,7 +302,11 @@ body > div.container div#syrcuit-service-content-3 {
 
 
 body.page-template-page-template-solar div#benefits {
-	background: $orange;
+	background-color: $orange;
+	background-image: url('./assets/images/solar-background.png');
+	background-position: left top;
+	background-size: contain;
+	background-repeat: no-repeat;
 
 	.benefit {
 		h3 {
@@ -324,7 +346,11 @@ body.page-template-page-template-solar div#benefits {
 }
 
 body.page-template-page-template-geothermal div#benefits {
-	background: $teal;
+	background-color: $teal;
+	background-image: url('./assets/images/geothermal-background.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 
 	.benefit {
 		h3 {
@@ -474,7 +500,8 @@ body > div.container > footer.row {
 
 		.syrcuit-footer-addr {
 			text-align: left;
-			font: normal 700 18px/24px Archivo;
+			font: normal 17px/22px Archivo;
+			font-weight: 700;
 			letter-spacing: 0px;
 			color: $teal;
 			text-transform: uppercase;
@@ -574,7 +601,7 @@ body > div.container > footer.row {
 				text-transform: uppercase;
 				
 				font: normal 700 16px/17px Archivo;
-				letter-spacing: 0px;
+				letter-spacing: 1.5px;
 				font-weight: 600;
 				box-shadow: none !important;
 				border: none !important;
@@ -751,8 +778,8 @@ body > div.container > footer.row {
 	}
 
 	body>div.container #inner-header div.copy {
-		font-size: 32px;
-		line-height: 42px;
+		font-size: 28px;
+		line-height: 34px;
 	}
 
 	body.page-template-page-template-the-team>div.container div.team-members .h2, 
