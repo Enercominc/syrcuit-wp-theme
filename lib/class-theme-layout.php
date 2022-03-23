@@ -199,13 +199,13 @@ class SyrcuitThemeLayout extends Method_Layout {
 								$classes = 'col';
 								switch ($row) {
 								    case 1:
-								        $classes = 'col-md-9';
+								        $classes = 'col col-lg-9';
 								        break;
 								    case 2:
-								        $classes = 'col-md-9 offset-md-3';
+								        $classes = 'col-lg-9 offset-lg-3';
 								        break;
 								    case 3:
-								        $classes = 'col-md-8';
+								        $classes = 'col-lg-8';
 								        break;
 								}
 								$this->html .= '
