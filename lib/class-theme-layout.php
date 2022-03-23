@@ -76,22 +76,25 @@ class SyrcuitThemeLayout extends Method_Layout {
 			<footer class="row p-5 clearfix">
 				<div class="syrcuit-footer-content container clearfix">
 					<div class="row">
-						<div class="col-12 col-md-4">
-							<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo.png" class="mb-3" id="site-logo" width="320" height="69" alt="Syrcuit logo">
-
-							<div class="syrcuit-footer-addr">
-								' . ( $this->get_option( 'addr_line1' ) ? '<div>' . $this->get_option( 'addr_line1' ) . '</div>' : '' ) . '
-								' . ( $this->get_option( 'addr_line2' ) ? '<div>' . $this->get_option( 'addr_line2' ) . '</div>' : '' ) . '
-								' . ( $this->get_option( 'addr_line3' ) ? '<div>' . $this->get_option( 'addr_line3' ) . '</div>' : '' ) . '
-								' . ( $this->get_option( 'phone_num' ) ? '<div>' . $this->get_option( 'phone_num' ) . '</div>' : '' ) . '
-								<div class="syrcuit-footer-social">
-								' . $this->build_social_icons( 's-ics', 36 ) . '
-								</div>
-								
+						<div class="col-12 col-lg-4 order-2 order-lg-1">
+							<div class="row">
+							<div class="col-12 col-sm-6 col-lg-12">
+							<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo.png" class="mb-3" id="site-footer-logo" width="300" height="71" alt="Syrcuit logo">
 							</div>
-
+							<div class="col-12 col-sm-6 col-lg-12">
+								<div class="syrcuit-footer-addr mb-4">
+									' . ( $this->get_option( 'addr_line1' ) ? '<div>' . $this->get_option( 'addr_line1' ) . '</div>' : '' ) . '
+									' . ( $this->get_option( 'addr_line2' ) ? '<div>' . $this->get_option( 'addr_line2' ) . '</div>' : '' ) . '
+									' . ( $this->get_option( 'addr_line3' ) ? '<div>' . $this->get_option( 'addr_line3' ) . '</div>' : '' ) . '
+									' . ( $this->get_option( 'phone_num' ) ? '<div>' . $this->get_option( 'phone_num' ) . '</div>' : '' ) . '
+									<div class="syrcuit-footer-social">
+									' . $this->build_social_icons( 's-ics', 36 ) . '
+									</div>
+								</div>
+							</div>
+							</div>
 						</div>
-						<div class="col-12 col-md-8">
+						<div class="col-12 col-lg-8 order-1 order-lg-2">
 							
 							<div class="row">
 								' . $this->get_content_from_option( 'footer_contact', '<div class="syrcuit-footer-contact">', '</div>' ) . '
@@ -130,16 +133,16 @@ class SyrcuitThemeLayout extends Method_Layout {
 											
 											<div id="inner-header-content" >
 										<div class="p-5 row">
-										<div class="col-md-7">
+										<div class="col-7">
 													<a href="/">
-														<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo-ko.png" class="mb-3" id="site-logo" width="320" height="69" alt="Syrcuit logo" />
+														<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo-ko.png" class="mb-3 img-fluid" id="site-logo" width="300" height="71" alt="Syrcuit logo" />
 													</a>
 										</div>
-										<div class="col-sm-5 text-end">
+										<div class="col-5 text-end">
 											' . wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2, 'container' => '', 'menu_class' => '', 'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto nav flex-column justify-content-end %2$s">%3$s</ul>','walker' => new bootstrap_5_wp_nav_menu_walker(), 'fallback_cb' => '__return_false', 'echo' => false, ) ) . '
 														
 										</div>
-										<div class="col-12 p-5">
+										<div class="col-12 p-4">
 											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h1 class="syrcuit-h1 my-5">', '</h1>' ) . '
 											' . $this->get_headline( '_syrcuit_' . $prefix . '_sub_headline', '<h2 class="syrcuit-h1 my-5">', '</h2>' ) . '
 											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy">', '</div>' ) . '
@@ -176,7 +179,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 					$this->html .= '
 								<div class="row" id="content">
 									<div class="p-5">
-										<div class="p-5">
+										<div class="p-4">
 											<div class="col-12">
 												' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
 												' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
@@ -209,7 +212,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 									<div class="row">
 									<!-- start item -->
 										<div id="syrcuit-service-content-'.$row.'" class="syrcuit-service-content p-5">
-											<div class="'.$classes.' p-5">
+											<div class="'.$classes.' p-4">
 												<h2 class="mb-4">' . $this->format_headline( $item['headline'] ) . '</h2>				
 												<div class="syrcuit-copy">
 													' . $this->filter_content( $item['content'] ) . '
@@ -235,7 +238,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 									<div class="col-md-6 benefit">
 									<!-- start item -->
 										<div class="row">
-											<div class="col-md-auto">
+											<div class="col-auto">
 												<div class="img-wrapper">
 												' . ( $item['img_id'] ? wp_get_attachment_image( $item['img_id'], 'square_icon', false, array( 'class' => 'img-fluid' ) ) : '' ) . '
 												</div>
@@ -260,9 +263,9 @@ class SyrcuitThemeLayout extends Method_Layout {
 				case 'board-of-directors':
 					$this->html .= '
 								<div class="row team-members '.$component.'">
-									<div class="p-5">
-										<div class="col-12">
-											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+									<div class="pt-4 px-4 col">
+										<div class="mx-5">
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mt-5">', '</h2>' ) . '
 											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
 										</div>
 									</div>
@@ -271,7 +274,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 					$members = $this->get_serialized_meta( '_syrcuit_' . $prefix . '_members' );
 					if ( $members ) {
 						if ( is_array( $members ) ) {
-							$this->html .= '<div class="row px-5 mb-5" id="members">';
+							$this->html .= '<div class="p-5"><div class="row px-4" id="members">';
 							$count = 1;
 							foreach ( $members as $member ) {
 								$this->html .= '
@@ -302,7 +305,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 									';
 									$count++;
 							}
-							$this->html .= '</div>';
+							$this->html .= '</div></div>';
 						}
 					}	
 					break;
