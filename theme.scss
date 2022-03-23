@@ -57,11 +57,11 @@ body {
 	}
 }
 
-body > div.container {
+body > div.container-lg {
 	box-shadow: 2px 6px 20px rgba( 51, 51, 51, .25);
 }
 
-body > div.container div#content {
+body > div.container-lg div#content {
 	h2 {
 		text-align: left;
 		font: normal normal bold 52px/58px Archivo;
@@ -88,7 +88,7 @@ body > div.container div#content {
 }
 
 // Frontpage
-body > div.container div.syrcuit-service-content {
+body > div.container-lg div.syrcuit-service-content {
 
 	h2 {
 		text-align: left;
@@ -162,7 +162,7 @@ body > div.container div.syrcuit-service-content {
 
 
 
-body > div.container #inner-header {
+body > div.container-lg #inner-header {
 	// position: relative;
 	
 	> .col {
@@ -226,7 +226,7 @@ body > div.container #inner-header {
 
 	h1 {
 		text-align: left;
-		font: normal 44px/30px Archivo;
+		font: normal 44px/52px Archivo;
 		font-weight: 700;
 		letter-spacing: 0px;
 		color: $white;
@@ -266,7 +266,7 @@ body > div.container #inner-header {
 	}
 }
 
-body.home > div.container #inner-header {
+body.home > div.container-lg #inner-header {
 	
 .navbar-nav .nav-link {
 		color: $white;
@@ -274,7 +274,7 @@ body.home > div.container #inner-header {
 
 }
 
-body > div.container div#syrcuit-service-content-1 {
+body > div.container-lg div#syrcuit-service-content-1 {
 	background-color: $red;
 	background-image: url('./assets/images/the-team-background.png');
 	background-position: right top;
@@ -282,7 +282,7 @@ body > div.container div#syrcuit-service-content-1 {
 	background-repeat: no-repeat;
 }
 
-body > div.container div#syrcuit-service-content-2 {
+body > div.container-lg div#syrcuit-service-content-2 {
 	background-color: $orange;
 	background-image: url('./assets/images/solar-background.png');
 	background-position: left top;
@@ -290,7 +290,7 @@ body > div.container div#syrcuit-service-content-2 {
 	background-repeat: no-repeat;
 }
 
-body > div.container div#syrcuit-service-content-3 {
+body > div.container-lg div#syrcuit-service-content-3 {
 	background-color: $teal;
 	background-image: url('./assets/images/geothermal-background.png');
 	background-position: center;
@@ -392,7 +392,7 @@ body.page-template-page-template-geothermal div#benefits {
 
 body.page-template-page-template-the-team {
 
-	 &> div.container div.team-members {
+	 &> div.container-lg div.team-members {
 		h2 {
 			text-align: left;
 			font: normal normal bold 56px/62px Archivo;
@@ -491,7 +491,7 @@ body.page-template-page-template-the-team {
 
 
 
-body > div.container > footer.row {
+body > div.container-lg > footer.row {
 		background-color: $light-gray;
 		background-image: url('./assets/images/footer-background.png');
 		background-position: top left;
@@ -734,6 +734,11 @@ body > div.container > footer.row {
 	max-width: 1200px;
 }
 
+.p-5, .px-5 {
+		padding-left: 6rem!important;
+		padding-right: 6rem!important;
+	}
+
 
 // X-Small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) { 
@@ -766,47 +771,47 @@ body > div.container > footer.row {
 
 	
 
-	body>div.container #inner-header #site-logo {
+	body>div.container-lg #inner-header #site-logo {
 		max-width: 100%;
     	height: auto;
 	}
 
-	body>div.container #inner-header .h1, 
-	body>div.container #inner-header h1 {
+	body>div.container-lg #inner-header .h1, 
+	body>div.container-lg #inner-header h1 {
 		font-size: 36px;
 		line-height: 44px;
 	}
 
-	body>div.container #inner-header div.copy {
+	body>div.container-lg #inner-header div.copy {
 		font-size: 28px;
 		line-height: 34px;
 	}
 
-	body.page-template-page-template-the-team>div.container div.team-members .h2, 
-	body.page-template-page-template-the-team>div.container div.team-members h2 {
+	body.page-template-page-template-the-team>div.container-lg div.team-members .h2, 
+	body.page-template-page-template-the-team>div.container-lg div.team-members h2 {
 		font-size: 32px;
 		line-height: 42px;
 	}
 
-	body.page-template-page-template-the-team>div.container div.team-members p {
+	body.page-template-page-template-the-team>div.container-lg div.team-members p {
 		font-size: 28px;
 		line-height: 36px;
 	}
 
-	body>div.container div#content .h2, 
-	body>div.container div#content h2 {
+	body>div.container-lg div#content .h2, 
+	body>div.container-lg div#content h2 {
 		font-size: 32px;
 		line-height: 42px;
 	}
 
-	body>div.container div#content li, 
-	body>div.container div#content p, 
-	body>div.container div#content ul {
+	body>div.container-lg div#content li, 
+	body>div.container-lg div#content p, 
+	body>div.container-lg div#content ul {
 		font-size: 28px;
 		line-height: 36px;
 	}
 
-	body > div.container > footer.row {
+	body > div.container-lg > footer.row {
 		#site-footer-logo {
 			max-width: 100%;
 	    	height: auto;
@@ -816,12 +821,18 @@ body > div.container > footer.row {
 
 // Small devices (landscape phones, less than 768px)
 @media (max-width: 767.98px) { 
-	body>div.container #inner-header #site-logo {
+
+	.p-5, .px-5 {
+		padding-left: 3rem!important;
+		padding-right: 3rem!important;
+	}
+
+	body>div.container-lg #inner-header #site-logo {
 		max-width: 100%;
     	height: auto;
 	}
 
-	body > div.container > footer.row {
+	body > div.container-lg > footer.row {
 		#site-footer-logo {
 			max-width: 100%;
 	    	height: auto;
@@ -835,12 +846,18 @@ body > div.container > footer.row {
 
 // Medium devices (tablets, less than 992px)
 @media (max-width: 991.98px) { 
-	body>div.container #inner-header #site-logo {
+
+	.p-5, .px-5 {
+		padding-left: 4rem!important;
+		padding-right: 4rem!important;
+	}
+
+	body>div.container-lg #inner-header #site-logo {
 		max-width: 100%;
     	height: auto;
 	}
 
-	body > div.container > footer.row {
+	body > div.container-lg > footer.row {
 		
 		.syrcuit-footer-addr {
 			margin-left: 0;
@@ -851,16 +868,22 @@ body > div.container > footer.row {
 
 // Large devices (desktops, less than 1200px)
 @media (max-width: 1199.98px) { 
-	body > div.container > footer.row {
+
+	.p-5, .px-5 {
+		padding-left: 5rem!important;
+		padding-right: 5rem!important;
+	}
+
+	body > div.container-lg > footer.row {
 
 		#site-footer-logo {
 			max-width: 100%;
 	    	height: auto;
 		}
 
-		// .syrcuit-footer-addr {
-		// 	margin-left: 27%;
-		// }
+		.syrcuit-footer-addr {
+			margin-left: 27%;
+		}
 	}
 }
 

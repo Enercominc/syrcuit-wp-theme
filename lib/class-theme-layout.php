@@ -63,7 +63,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 
 		';
 		$this->html .= '
-			<div class="container">
+			<div class="container-lg">
 				
 			<!-- no closing container div -->		
 		';
@@ -74,7 +74,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 		$this->html .= '
 			
 			<footer class="row p-5 clearfix">
-				<div class="syrcuit-footer-content container clearfix">
+				<div class="syrcuit-footer-content container-lg clearfix">
 					<div class="row">
 						<div class="col-12 col-lg-4 order-2 order-lg-1">
 							<div class="row">
@@ -155,26 +155,6 @@ class SyrcuitThemeLayout extends Method_Layout {
 									
 					';
 					break;	
-				case 'activated':
-					// Placeholder element. Should be removed from production theme.
-					$this->html .= '
-						<div class="error404">
-							<div class="container-fluid">
-								<div class="row justify-content-center align-items-center">
-									<div class="col-12 col-sm-8 col-md-5 col-lg-4">
-										<div class="error404-content text-center">
-											<h1>Epic!</h1>
-											<br>
-											<h2>You\'re Up &amp Running.</h2>
-											<p>This site is now running a build of Method.</p>
-											<a href="https://github.com/pixelwatt/method" target="_blank" class="btn btn-lg btn-primary m-auto">Method on GitHub</a>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					';
-					break;
 				case 'content-box':
 					$this->html .= '
 								<div class="row" id="content">
