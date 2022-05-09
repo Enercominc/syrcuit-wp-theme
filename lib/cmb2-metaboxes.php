@@ -127,7 +127,7 @@ function syrcuit_register_page_template_solar_metabox() {
 		)
 	);
 
-	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box', 'benefits' ) );
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'section-box', 'content-box', 'benefits' ) );
 
 }
 

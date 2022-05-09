@@ -118,6 +118,65 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 				// 		)
 				// 	);				
 				break;
+			case 'section-box':
+				$section_title = 'Section <span style="font-weight: 400;">Box</span>';
+				$obj->add_field(
+					array(
+						'name' => __( '<span style="font-size: 1.75rem; font-weight: 900;">' . $section_title . '</span>', 'rra' ),
+						'desc' => __( 'Below, configure content for this page.', 'rra' ),
+						'id'   => '_syrcuit_' . $prefix . '_info',
+						'type' => 'title',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Left Headline', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_left_headline',
+						'type'     => 'text',
+						'desc' => syrcuit_get_tags_badge() . 'Provide a headline for the intro.',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Left Content', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_left_content',
+						'type'     => 'wysiwyg',
+						'desc' => 'Provide content for the intro.',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Right Headline', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_right_headline',
+						'type'     => 'text',
+						'desc' => syrcuit_get_tags_badge() . 'Provide a headline for the intro.',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Right Content', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_right_content',
+						'type'     => 'wysiwyg',
+						'desc' => 'Provide content for the intro.',
+					)
+				);
+				// $obj->add_field(
+				// 	array(
+				// 		'name'     => __( 'Excerpt', 'syrcuit-mu' ),
+				// 		'id'   => '_syrcuit_' . $prefix . '_excerpt',
+				// 		'type'     => 'text',
+				// 		'desc' => 'Provide excerpt for the intro.',
+				// 	)
+				// );
+				// $obj->add_field(
+				// 		array(
+				// 			'name'     => __( 'Image', 'syrcuit-mu' ),
+				// 			'id'   => '_syrcuit_' . $prefix . '_img',
+				// 			'type'     => 'file',
+				// 			'desc' => 'Provide an image to display to the right of this section\'s content.',
+				// 		)
+				// 	);				
+				break;
 			case 'sections':
 				$obj->add_field(
 					array(

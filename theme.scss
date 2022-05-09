@@ -24,7 +24,6 @@ $primary: $gray;
 
 $enable-negative-margins: true;
 
-
 @import "inc/bootstrap/scss/bootstrap.scss";
 
 // // Source mixin
@@ -85,6 +84,10 @@ body > div.container-lg div#content {
 		letter-spacing: 0px;
 		color: $teal;
 	}
+}
+
+body > div.container-lg div.section-box {
+	background: $light-gray;
 }
 
 // Frontpage
@@ -231,7 +234,7 @@ body > div.container-lg #inner-header {
 		letter-spacing: 0px;
 		color: $white;
 		opacity: 1;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 	}
 
 	h2 {
@@ -243,7 +246,7 @@ body > div.container-lg #inner-header {
 		opacity: 1;
 		border-top: 1px solid $white;
 		padding-top: 1rem;
-		text-transform: uppercase;
+		// text-transform: uppercase;
 	}
 
 	div.copy {

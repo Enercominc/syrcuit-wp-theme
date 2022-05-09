@@ -28,7 +28,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 						$template = get_page_template_slug( $this->id );
 						switch ( $template ) {
 							case 'templates/page-template-solar.php':
-								$this->attr['components'] = array( 'internal-header', 'content-box', 'benefits' );
+								$this->attr['components'] = array( 'internal-header', 'content-box', 'section-box', 'benefits' );
 								break;
 							case 'templates/page-template-geothermal.php':
 								$this->attr['components'] = array( 'internal-header', 'content-box', 'benefits' );
@@ -163,6 +163,24 @@ class SyrcuitThemeLayout extends Method_Layout {
 											<div class="col-12">
 												' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
 												' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
+											</div>
+										</div>
+									</div>
+								</div>
+					';
+					break;
+				case 'section-box':
+					$this->html .= '
+								<div class="section-box row" id="content">
+									<div class="p-5">
+										<div class="p-4 row">
+											<div class="col-6">
+												' . $this->get_headline( '_syrcuit_' . $prefix . '_left_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+												' . $this->get_content( '_syrcuit_' . $prefix . '_left_content', '<div class="syrcuit-copy">', '</div>' ) . '
+											</div>
+											<div class="col-6">
+												' . $this->get_headline( '_syrcuit_' . $prefix . '_right_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+												' . $this->get_content( '_syrcuit_' . $prefix . '_right_content', '<div class="syrcuit-copy">', '</div>' ) . '
 											</div>
 										</div>
 									</div>
