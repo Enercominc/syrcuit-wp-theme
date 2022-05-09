@@ -175,11 +175,11 @@ class SyrcuitThemeLayout extends Method_Layout {
 									<div class="p-5">
 										<div class="p-4 row">
 											<div class="col-6 pe-md-4">
-												' . $this->get_headline( '_syrcuit_' . $prefix . '_left_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+												' . $this->get_headline( '_syrcuit_' . $prefix . '_left_headline', '<h2 class="syrcuit-h2 mb-3">', '</h2>' ) . '
 												' . $this->get_content( '_syrcuit_' . $prefix . '_left_content', '<div class="syrcuit-copy">', '</div>' ) . '
 											</div>
 											<div class="col-6 ps-md-4">
-												' . $this->get_headline( '_syrcuit_' . $prefix . '_right_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
+												' . $this->get_headline( '_syrcuit_' . $prefix . '_right_headline', '<h2 class="syrcuit-h2 mb-3">', '</h2>' ) . '
 												' . $this->get_content( '_syrcuit_' . $prefix . '_right_content', '<div class="syrcuit-copy">', '</div>' ) . '
 											</div>
 										</div>
