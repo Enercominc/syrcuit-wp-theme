@@ -86,9 +86,7 @@ body > div.container-lg div#content {
 	}
 }
 
-body > div.container-lg div.section-box {
-	background: $light-gray;
-}
+
 
 // Frontpage
 body > div.container-lg div.syrcuit-service-content {
@@ -494,6 +492,39 @@ body.page-template-page-template-the-team {
 }
 
 
+body > div.container-lg div#section {
+	background: $light-gray;
+
+	h2 {
+		text-align: left;
+		font: normal normal bold 46px/52px Archivo;
+		letter-spacing: 0px;
+		color: $red;
+		text-transform: uppercase;
+		opacity: 1;
+	}
+
+    h3 {
+    	text-align: left;
+		font: normal medium 26px/34px Archivo;
+		letter-spacing: 0px;
+		color: $dark-gray;
+    }
+
+
+	h3 {
+		color: $dark-gray;
+	}
+
+	p, ul, li {
+		text-align: left;
+		font: normal 20px/28px Archivo;
+		font-weight: 400;
+		letter-spacing: 0px;
+		color: $dark-gray;
+	}
+}
+
 
 body > div.container-lg > footer.row {
 		background-color: $light-gray;
@@ -811,6 +842,19 @@ body > div.container-lg > footer.row {
 	body>div.container-lg div#content li, 
 	body>div.container-lg div#content p, 
 	body>div.container-lg div#content ul {
+		font-size: 28px;
+		line-height: 36px;
+	}
+
+	body>div.container-lg div#section .h2, 
+	body>div.container-lg div#section h2 {
+		font-size: 32px;
+		line-height: 42px;
+	}
+
+	body>div.container-lg div#section li, 
+	body>div.container-lg div#section p, 
+	body>div.container-lg div#section ul {
 		font-size: 28px;
 		line-height: 36px;
 	}

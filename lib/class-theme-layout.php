@@ -171,7 +171,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 					break;
 				case 'section-box':
 					$this->html .= '
-								<div class="section-box row" id="content">
+								<div class="section-box row" id="section">
 									<div class="p-5">
 										<div class="p-4 row">
 											<div class="col-6 pe-md-4">
