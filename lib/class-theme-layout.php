@@ -143,9 +143,9 @@ class SyrcuitThemeLayout extends Method_Layout {
 														
 										</div>
 										<div class="col-12 p-4">
-											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h1 class="syrcuit-h1 my-5">', '</h1>' ) . '
-											' . $this->get_headline( '_syrcuit_' . $prefix . '_sub_headline', '<h2 class="syrcuit-h1 my-5">', '</h2>' ) . '
-											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy">', '</div>' ) . '
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h1 class="syrcuit-h1 py-5">', '</h1>' ) . '
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_sub_headline', '<h2 class="syrcuit-h1 py-5">', '</h2>' ) . '
+											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy py-4">', '</div>' ) . '
 										</div>
 										</div>
 										</div>
