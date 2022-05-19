@@ -302,11 +302,13 @@ class SyrcuitThemeLayout extends Method_Layout {
 				case 'management':
 				case 'board-of-directors':
 					$this->html .= '
-								<div class="row team-members '.$component.'">
-									<div class="pt-4 px-4 col">
-										<div class="mx-5">
-											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mt-5">', '</h2>' ) . '
+								<div id="content" class="row team-members '.$component.'">
+									<div class="p-5">
+										<div class="p-4">
+											<div class="col">
+											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
 											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
+											</div>
 										</div>
 									</div>
 								</div>
@@ -314,7 +316,9 @@ class SyrcuitThemeLayout extends Method_Layout {
 					$members = $this->get_serialized_meta( '_syrcuit_' . $prefix . '_members' );
 					if ( $members ) {
 						if ( is_array( $members ) ) {
-							$this->html .= '<div class="p-5"><div class="row px-4" id="members">';
+							$this->html .= '<div class="p-5">
+										<div class="p-4">
+											<div class="col"><div class="row px-4" id="members">';
 							$count = 1;
 							foreach ( $members as $member ) {
 								$this->html .= '
@@ -345,7 +349,8 @@ class SyrcuitThemeLayout extends Method_Layout {
 									';
 									$count++;
 							}
-							$this->html .= '</div></div>';
+							$this->html .= '</div></div></div>		
+											</div>	';
 						}
 					}	
 					break;
