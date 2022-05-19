@@ -152,7 +152,7 @@ function syrcuit_register_page_template_geothermal_metabox() {
 		)
 	);
 
-	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box', 'benefits' ) );
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box', 'geo-box-1', 'geo-box-2'  ) ); // , 'benefits'
 
 }
 

@@ -118,6 +118,42 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 				// 		)
 				// 	);				
 				break;
+			case 'geo-box-1':
+			case 'geo-box-2':
+				$section_title = 'Content <span style="font-weight: 400;">Box</span>';
+				$obj->add_field(
+					array(
+						'name' => __( '<span style="font-size: 1.75rem; font-weight: 900;">' . $section_title . '</span>', 'rra' ),
+						'desc' => __( 'Below, configure content for this page.', 'rra' ),
+						'id'   => '_syrcuit_' . $prefix . '_info',
+						'type' => 'title',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name' => __( 'Video Background', 'rra' ),
+						'desc' => __( 'Provide an video to display behind to the box.', 'rra' ),
+						'id'   => '_syrcuit_' . $prefix . '_video',
+						'type' => 'file',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Headline', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_headline',
+						'type'     => 'text',
+						'desc' => syrcuit_get_tags_badge() . 'Provide a headline for the intro.',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Content', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_content',
+						'type'     => 'wysiwyg',
+						'desc' => 'Provide content for the intro.',
+					)
+				);
+				break;
 			case 'section-box':
 				$section_title = 'Section <span style="font-weight: 400;">Box</span>';
 				$obj->add_field(
