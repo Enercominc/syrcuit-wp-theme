@@ -21,6 +21,8 @@ $accent-gray: #D3D3D3;
 
 $primary: $gray;
 
+$secondary: $teal;
+
 $enable-negative-margins: true;
 
 @import "inc/bootstrap/scss/bootstrap.scss";
@@ -832,11 +834,11 @@ body > div.container-lg > footer.row {
 }
 
 #geo-box-1 {
-	background: $green;
+	// background: $green;
 }
 
 #geo-box-2 {
-	background: $yellow;
+	// background: $yellow;
 
 	.col {
 		background-attachment: fixed;

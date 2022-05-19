@@ -156,6 +156,30 @@ function syrcuit_register_page_template_geothermal_metabox() {
 
 }
 
+// Colorado’s Energy Future (Page Template) Metabox
+
+add_action( 'cmb2_admin_init', 'syrcuit_register_page_template_colorado_metabox' );
+
+function syrcuit_register_page_template_colorado_metabox() {
+	$prefix = '_syrcuit_';
+
+	$cmb_options = new_cmb2_box(
+		array(
+			'id'            => $prefix . 'metabox_page_template_colorado',
+			'title'         => esc_html__( 'Page Template Options', 'cmb2' ),
+			'object_types'  => array( 'page' ),
+			'priority'     => 'high',
+			'show_on'      => array(
+				'key'   => 'page-template',
+				'value' => 'templates/page-template-colorado.php',
+			),
+		)
+	);
+
+	syrcuit_load_cmb2_options( $cmb_options, array( 'internal-header', 'content-box'  ) ); // , 'benefits' , 'geo-box-1', 'geo-box-2'
+
+}
+
 // The Team (Page Template) Metabox
 
 add_action( 'cmb2_admin_init', 'syrcuit_register_page_template_the_team_metabox' );

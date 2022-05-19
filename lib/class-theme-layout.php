@@ -33,6 +33,9 @@ class SyrcuitThemeLayout extends Method_Layout {
 							case 'templates/page-template-geothermal.php':
 								$this->attr['components'] = array( 'internal-header', 'content-box', 'geo-box-1', 'geo-box-2' ); // , 'benefits'
 								break;
+							case 'templates/page-template-colorado.php':
+								$this->attr['components'] = array( 'internal-header', 'content-box' ); // , 'benefits' , 'geo-box-1', 'geo-box-2'
+								break;
 							case 'templates/page-template-the-team.php':
 								$this->attr['components'] = array( 'internal-header', 'management', 'board-of-directors' );
 								break;
