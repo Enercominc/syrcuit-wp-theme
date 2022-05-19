@@ -28,7 +28,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 						$template = get_page_template_slug( $this->id );
 						switch ( $template ) {
 							case 'templates/page-template-solar.php':
-								$this->attr['components'] = array( 'internal-header', 'content-box', 'section-box', 'benefits' );
+								$this->attr['components'] = array( 'internal-header', 'content-box', 'geo-box-1', 'geo-box-2', 'benefits' );
 								break;
 							case 'templates/page-template-geothermal.php':
 								$this->attr['components'] = array( 'internal-header', 'content-box', 'geo-box-1', 'geo-box-2' ); // , 'benefits'
