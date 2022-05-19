@@ -819,6 +819,15 @@ body > div.container-lg > footer.row {
 		// 	top:0;
 		// 	left: 0;
 		// }
+
+		h2 {
+			text-align: left;
+			font: normal normal bold 26px/32px Archivo;
+			letter-spacing: 0px;
+			color: $red;
+			text-transform: uppercase;
+			opacity: 1;
+		}
 	}
 }
 
@@ -890,7 +899,9 @@ body > div.container-lg > footer.row {
 	}
 
 	body>div.container-lg div#content .h2, 
-	body>div.container-lg div#content h2 {
+	body>div.container-lg div#content h2,
+	.geo-box .inner-header-content .h2,
+	.geo-box .inner-header-content h2 {
 		font-size: 32px;
 		line-height: 42px;
 	}
@@ -903,7 +914,8 @@ body > div.container-lg > footer.row {
 	}
 
 	body>div.container-lg div#section .h2, 
-	body>div.container-lg div#section h2 {
+	body>div.container-lg div#section h2,
+	 {
 		font-size: 32px;
 		line-height: 42px;
 	}

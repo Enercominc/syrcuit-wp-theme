@@ -193,10 +193,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 				case 'geo-box-2':
 					$this->html .= '
 								<div class="row geo-box" id="geo-box-2">
-									<div class="col">
-									<video playsinline autoplay muted loop id="myVideo">
-											  <source src="' . $this->get_meta( '_syrcuit_' . $prefix . '_video' ) . '" type="video/mp4">
-											</video>
+									<div class="col" ' . ( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ) ? 'style="background-image: url('.wp_get_attachment_image_src( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ), 'full', false )[0].')"' : '' ) . '>
 									<div class="inner-header-content">
 										<div class="p-5">
 											<div class="p-4">
