@@ -28,7 +28,7 @@ class SyrcuitThemeLayout extends Method_Layout {
 						$template = get_page_template_slug( $this->id );
 						switch ( $template ) {
 							case 'templates/page-template-solar.php':
-								$this->attr['components'] = array( 'internal-header', 'content-box', 'geo-box-1', 'geo-box-2', 'benefits' );
+								$this->attr['components'] = array( 'internal-header', 'content-box', 'geo-box-1', 'geo-box-2', 'geo-box-3', 'geo-box-4' ); // , 'benefits'
 								break;
 							case 'templates/page-template-geothermal.php':
 								$this->attr['components'] = array( 'internal-header', 'content-box', 'geo-box-1', 'geo-box-2' ); // , 'benefits'
@@ -173,34 +173,23 @@ class SyrcuitThemeLayout extends Method_Layout {
 					';
 					break;
 				case 'geo-box-1':
+				case 'geo-box-2':
+				case 'geo-box-3':
+				case 'geo-box-4':
+					$class = 'col-md-6';
+					if ( in_array( $prefix, array( 'geo_box_1', 'geo_box_3' ) ) ){
+						$class .= ' offset-md-6';
+					}
 					$this->html .= '
-								<div class="row geo-box" id="geo-box-1">
-									<div class="col">
+								<div class="row geo-box '.$this->get_meta( '_syrcuit_' . $prefix . '_extra_class' ).'" id="geo-box-1">
+									<div class="col" ' . ( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ) ? 'style="background-image: url('.wp_get_attachment_image_src( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ), 'full', false )[0].')"' : '' ) . '>
 									<video playsinline autoplay muted loop id="myVideo">
 											  <source src="' . $this->get_meta( '_syrcuit_' . $prefix . '_video' ) . '" type="video/mp4">
 											</video>
 									<div class="inner-header-content">
 										<div class="p-5">
 											<div class="p-4">
-												<div class="col-md-6 offset-md-6">
-													' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
-													' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-					';
-					break;
-				case 'geo-box-2':
-					$this->html .= '
-								<div class="row geo-box" id="geo-box-2">
-									<div class="col" ' . ( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ) ? 'style="background-image: url('.wp_get_attachment_image_src( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ), 'full', false )[0].')"' : '' ) . '>
-									<div class="inner-header-content">
-										<div class="p-5">
-											<div class="p-4">
-												<div class="col-md-6">
+												<div class="'.$class.'">
 													' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h2 class="syrcuit-h2 mb-4">', '</h2>' ) . '
 													' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="syrcuit-copy">', '</div>' ) . '
 												</div>

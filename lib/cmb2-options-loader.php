@@ -120,6 +120,8 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 				break;
 			case 'geo-box-1':
 			case 'geo-box-2':
+			case 'geo-box-3':
+			case 'geo-box-4':
 				$section_title = 'Content <span style="font-weight: 400;">Box</span>';
 				$obj->add_field(
 					array(
@@ -143,6 +145,14 @@ function syrcuit_load_cmb2_options( &$obj, $temps ) {
 						'desc' => __( 'Provide an static image to display behind to the header.', 'rra' ),
 						'id'   => '_syrcuit_' . $prefix . '_image',
 						'type' => 'file',
+					)
+				);
+				$obj->add_field(
+					array(
+						'name'     => __( 'Extra Class', 'syrcuit-mu' ),
+						'id'   => '_syrcuit_' . $prefix . '_extra_class',
+						'type'     => 'text',
+						'desc' => 'Enter "white" for content of box to be white font.',
 					)
 				);
 				$obj->add_field(

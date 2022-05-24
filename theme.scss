@@ -832,17 +832,21 @@ body > div.container-lg > footer.row {
 	}
 }
 
-#geo-box-1 {
-	// background: $green;
-}
 
-#geo-box-2 {
+#geo-box-1,
+#geo-box-2,
+#geo-box-3,
+#geo-box-4 {
 	// background: $yellow;
 
 	.col {
 		background-attachment: fixed;
-		background-size: cover;
+		background-size: cover;		
+	}
 
+	&.white {
+		.col {
+		
 		.inner-header-content {
 			h2 {
 				color: $white;
@@ -855,7 +859,7 @@ body > div.container-lg > footer.row {
 			}
 		}
 	}
-
+	}
 	
 }
 
