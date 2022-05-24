@@ -136,12 +136,14 @@ class SyrcuitThemeLayout extends Method_Layout {
 											
 											<div id="inner-header-content" >
 										<div class="p-5 row">
-										<div class="col-7">
+										<div class="col-12 col-md-5">
+											<div class="text-center text-md-start">
 													<a href="/">
 														<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo-ko.png" class="mb-3 img-fluid" id="site-logo" width="300" height="71" alt="Syrcuit logo" />
 													</a>
+											</div>
 										</div>
-										<div class="col-5 text-end">
+										<div class="col-12 col-md-7 text-end">
 											' . wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2, 'container' => '', 'menu_class' => '', 'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto nav flex-column justify-content-end %2$s">%3$s</ul>','walker' => new bootstrap_5_wp_nav_menu_walker(), 'fallback_cb' => '__return_false', 'echo' => false, ) ) . '
 														
 										</div>

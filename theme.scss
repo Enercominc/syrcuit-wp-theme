@@ -864,122 +864,39 @@ body > div.container-lg > footer.row {
 }
 
 
-// X-Small devices (portrait phones, less than 576px)
-@media (max-width: 575.98px) { 
 
-	.p-4 {
-	    padding: 1rem!important;
-	}
 
-	.p-5 {
-	    padding: 1.5rem!important;
-	}
 
-	.mb-4 {
-	    margin-bottom: 1.5rem!important;
-	}
 
-	.m-5 {
-	    margin: 1.5rem!important;
-	}
 
-	.mx-5 {
-	    margin-left: 1.5rem!important;
-	    margin-right: 1.5rem!important;
-	}
 
-	.my-5 {
-	    margin-top: 1.5rem!important;
-	    margin-bottom: 1.5rem!important;
-	}
 
-	
 
-	body>div.container-lg #inner-header #site-logo {
-		max-width: 100%;
-    	height: auto;
-	}
+// XX-Large devices (larger desktops)
+// No media query since the xxl breakpoint has no upper bound on its width
 
-	body>div.container-lg #inner-header .h1, 
-	body>div.container-lg #inner-header h1 {
-		font-size: 36px;
-		line-height: 44px;
-	}
+// X-Large devices (large desktops, less than 1400px)
+@media (max-width: 1399.98px) { 
 
-	body>div.container-lg #inner-header div.copy {
-		font-size: 28px;
-		line-height: 34px;
-	}
-
-	body.page-template-page-template-the-team>div.container-lg div.team-members .h2, 
-	body.page-template-page-template-the-team>div.container-lg div.team-members h2 {
-		font-size: 32px;
-		line-height: 42px;
-	}
-
-	body.page-template-page-template-the-team>div.container-lg div.team-members p {
-		font-size: 28px;
-		line-height: 36px;
-	}
-
-	body>div.container-lg div#content .h2, 
-	body>div.container-lg div#content h2,
-	.geo-box .inner-header-content .h2,
-	.geo-box .inner-header-content h2 {
-		font-size: 32px;
-		line-height: 42px;
-	}
-
-	body>div.container-lg div#content li, 
-	body>div.container-lg div#content p, 
-	body>div.container-lg div#content ul {
-		font-size: 28px;
-		line-height: 36px;
-	}
-
-	body>div.container-lg div#section .h2, 
-	body>div.container-lg div#section h2,
-	 {
-		font-size: 32px;
-		line-height: 42px;
-	}
-
-	body>div.container-lg div#section li, 
-	body>div.container-lg div#section p, 
-	body>div.container-lg div#section ul {
-		font-size: 28px;
-		line-height: 36px;
-	}
-
-	body > div.container-lg > footer.row {
-		#site-footer-logo {
-			max-width: 100%;
-	    	height: auto;
-		}
-	}
 }
 
-// Small devices (landscape phones, less than 768px)
-@media (max-width: 767.98px) { 
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) { 
 
 	.p-5, .px-5 {
-		padding-left: 3rem!important;
-		padding-right: 3rem!important;
-	}
-
-	body>div.container-lg #inner-header #site-logo {
-		max-width: 100%;
-    	height: auto;
+		padding-left: 5rem!important;
+		padding-right: 5rem!important;
 	}
 
 	body > div.container-lg > footer.row {
+
 		#site-footer-logo {
 			max-width: 100%;
 	    	height: auto;
 		}
 
 		.syrcuit-footer-addr {
-			margin-left: 81px;
+			margin-left: 27%;
 		}
 	}
 }
@@ -1006,31 +923,130 @@ body > div.container-lg > footer.row {
 
 }
 
-// Large devices (desktops, less than 1200px)
-@media (max-width: 1199.98px) { 
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) { 
 
 	.p-5, .px-5 {
-		padding-left: 5rem!important;
-		padding-right: 5rem!important;
+		padding-left: 3rem!important;
+		padding-right: 3rem!important;
+	}
+
+	body>div.container-lg #inner-header #site-logo {
+		max-width: 100%;
+    	height: auto;
 	}
 
 	body > div.container-lg > footer.row {
-
 		#site-footer-logo {
 			max-width: 100%;
 	    	height: auto;
 		}
 
 		.syrcuit-footer-addr {
-			margin-left: 27%;
+			margin-left: 81px;
 		}
 	}
 }
 
-// X-Large devices (large desktops, less than 1400px)
-@media (max-width: 1399.98px) { 
 
+// X-Small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) { 
+
+	.p-4 {
+	    padding: 1rem!important;
+	}
+
+	.p-5,
+	div.p-5 {
+	    padding: 1.5rem!important;
+	}
+
+	.mb-4 {
+	    margin-bottom: 1.5rem!important;
+	}
+
+	.m-5 {
+	    margin: 1.5rem!important;
+	}
+
+	.mx-5 {
+	    margin-left: 1.5rem!important;
+	    margin-right: 1.5rem!important;
+	}
+
+	.my-5 {
+	    margin-top: 1.5rem!important;
+	    margin-bottom: 1.5rem!important;
+	}
+
+	body>div.container-lg #inner-header #site-logo {
+		max-width: 100%;
+    	height: auto;
+	}
+
+	body>div.container-lg #inner-header .h1, 
+	body>div.container-lg #inner-header h1 {
+		font-size: 32px;
+		line-height: 42px;
+	}
+
+	body>div.container-lg #inner-header .h2,
+	body>div.container-lg #inner-header h2 {
+		// font: 40px/56px Archivo;
+		font-size: 28px;
+		line-height: 36px;	
+	}
+
+	body>div.container-lg #inner-header div.copy {
+		font-size: 24px;
+		line-height: 32px;
+	}
+
+	body.page-template-page-template-the-team>div.container-lg div.team-members .h2, 
+	body.page-template-page-template-the-team>div.container-lg div.team-members h2 {
+		font-size: 28px;
+		line-height: 40px;
+	}
+
+	body.page-template-page-template-the-team>div.container-lg div.team-members p {
+		font-size: 24px;
+		line-height: 34px;
+	}
+
+	body>div.container-lg div#content .h2, 
+	body>div.container-lg div#content h2,
+	.geo-box .inner-header-content .h2,
+	.geo-box .inner-header-content h2 {
+		font-size: 28px;
+		line-height: 40px;
+	}
+
+	body>div.container-lg div#content li, 
+	body>div.container-lg div#content p, 
+	body>div.container-lg div#content ul {
+		font-size: 24px;
+		line-height: 34px;
+	}
+
+	body>div.container-lg div#section .h2, 
+	body>div.container-lg div#section h2,
+	 {
+		font-size: 28px;
+		line-height: 40px;
+	}
+
+	body>div.container-lg div#section li, 
+	body>div.container-lg div#section p, 
+	body>div.container-lg div#section ul {
+		font-size: 24px;
+		line-height: 34px;
+	}
+
+	body > div.container-lg > footer.row {
+		#site-footer-logo {
+			max-width: 100%;
+	    	height: auto;
+		}
+	}
 }
-
-// XX-Large devices (larger desktops)
-// No media query since the xxl breakpoint has no upper bound on its width
