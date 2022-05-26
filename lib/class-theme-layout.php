@@ -128,35 +128,45 @@ class SyrcuitThemeLayout extends Method_Layout {
 					// var_dump($this->get_meta( '_syrcuit_' . $prefix . '_video' ));
 					// die();
 					$this->html .= '						
-									<div id="inner-header" class="row">
-										<div class="col" ' . ( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ) ? 'style="background-image: url('.wp_get_attachment_image_src( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ), 'full', false )[0].')"' : '' ) . '>
-											<video playsinline autoplay muted loop id="myVideo">
-											  <source src="' . $this->get_meta( '_syrcuit_' . $prefix . '_video' ) . '" type="video/mp4">
-											</video>
-											
-											<div id="inner-header-content" >
-										<div class="p-5 row">
-										<div class="col-12 col-md-5">
-											<div class="text-center text-md-start">
-													<a href="/">
-														<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo-ko.png" class="mb-3 img-fluid" id="site-logo" width="300" height="71" alt="Syrcuit logo" />
-													</a>
-											</div>
-										</div>
-										<div class="col-12 col-md-7 text-end">
-											' . wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2, 'container' => '', 'menu_class' => '', 'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto nav flex-column justify-content-end %2$s">%3$s</ul>','walker' => new bootstrap_5_wp_nav_menu_walker(), 'fallback_cb' => '__return_false', 'echo' => false, ) ) . '
-														
-										</div>
-										<div class="col-12 p-4">
-											' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h1 class="syrcuit-h1 pt-5 pb-4">', '</h1>' ) . '
-											' . $this->get_headline( '_syrcuit_' . $prefix . '_sub_headline', '<h2 class="syrcuit-h1 py-5">', '</h2>' ) . '
-											' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy py-4">', '</div>' ) . '
-										</div>
-										</div>
-										</div>
-										
-										</div>
-									</div>
+						<div id="inner-header" class="row">
+							<div class="col" ' . ( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ) ? 'style="background-image: url('.wp_get_attachment_image_src( $this->get_meta( '_syrcuit_' . $prefix . '_image_id' ), 'full', false )[0].')"' : '' ) . '>
+								<video playsinline autoplay muted loop id="myVideo">
+								  <source src="' . $this->get_meta( '_syrcuit_' . $prefix . '_video' ) . '" type="video/mp4">
+								</video>
+								
+								<div id="inner-header-content" >
+								<div class="navbar-wrap">
+								<nav class="navbar navbar-expand-lg navbar-dark">
+							<div class="p-5 row">
+							<div class="col-10 col-lg-5">
+								<div class="text-md-start">
+										<a href="/">
+											<img src="' . get_template_directory_uri() . '/assets/images/Syrcuit-Logo-ko.png" class="mb-3 img-fluid" id="site-logo" width="300" height="71" alt="Syrcuit logo" />
+										</a>
+								</div>
+							</div>
+							<div class="col-2 text-end d-lg-none">
+								<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+								</button>
+							</div>
+							<div class="col-12 col-lg-7 text-end">
+								<div class="collapse navbar-collapse" id="navbarNav">
+									' . wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 2, 'container' => '', 'menu_class' => '', 'items_wrap' => '<ul id="%1$s" class="navbar-nav ms-auto flex-column %2$s">%3$s</ul>','walker' => new bootstrap_5_wp_nav_menu_walker(), 'fallback_cb' => '__return_false', 'echo' => false, ) ) . '
+								</div>									
+							</div>									
+
+							<div class="col-12 p-4">
+								' . $this->get_headline( '_syrcuit_' . $prefix . '_headline', '<h1 class="syrcuit-h1 pt-5 pb-4">', '</h1>' ) . '
+								' . $this->get_headline( '_syrcuit_' . $prefix . '_sub_headline', '<h2 class="syrcuit-h1 py-5">', '</h2>' ) . '
+								' . $this->get_content( '_syrcuit_' . $prefix . '_content', '<div class="copy py-4">', '</div>' ) . '
+							</div>
+							</div>
+							</div>
+							</nav>
+							</div>
+							</div>
+						</div>
 									
 					';
 					break;	
